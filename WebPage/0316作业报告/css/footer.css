@@ -1,0 +1,114 @@
+.footer-addr{
+    width: 100%;
+    background: #333;
+    padding-top: 20px;
+}
+.footerbox{
+    width: 1200px;
+    padding: 10px 0px 20px 0px;
+    margin: 0 auto;
+    border-bottom: 1px #cccccc solid;
+}
+
+.addrtel{
+    float: left;
+}
+
+.addrtel ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.addrtel ul li{
+    display: inline-block;
+    background: url(../imgs/footer04.png) no-repeat left;
+    margin-right: 20px;
+
+
+}
+
+.addrtel ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: left;
+}
+
+.contactaddress span{
+    color: #fff;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.addrtop .addrtrans{
+    float: right;
+}
+
+.addrtop .addrtrans a{
+    font-size: 10px;
+    color: #cccccc;
+    padding-right: 30px;
+}
+
+
+/*重点下半部分的各个列表*/
+
+.addrbottom{
+    margin-top: 10px;
+}
+
+.addrbottom .decorate{
+    float: left;
+
+}
+
+.addrbottom .decorate ul{
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.addrbottom .decorate ul li{
+    display: inline-block;
+    height: 15px;
+    border-right: 1px #cccccc solid;
+
+}
+
+.addrbottom .decorate ul li:first-child,
+.addrbottom .decorate ul li:last-child{
+     border-right: none;
+}
+
+.addrbottom .decorate ul li:first-child a{
+    color: #ff8600;
+    font-size: 14px;
+    padding-right: 15px;
+
+}
+
+.addrbottom .decorate ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    font-size: 12px;
+    line-height: 15px;
+
+    text-align: left;
+}
+.markcode{
+    float: right;
+    padding-right: 30px;
+}
+
+.markcode span{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}

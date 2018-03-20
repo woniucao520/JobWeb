@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>导航栏</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#nav{
+		height:40px;
+		width:990px;
+		background:#E64346;
+		margin:0 auto;
+		}
+		
+		.nav-left{
+		float:left;
+		width:210px;
+		height:40px;
+		background:#CD2A2C;}
+		
+		.nav-text{
+		float:left
+		
+		}
+		
+		
+		.nav-text a{
+			text-decoration: none;
+			color: #fff;
+			padding-left:10px;
+			font-size:15px;
+			text-align:center;
+			line-height:40px;
+			
+		}
+		
+		.imgcross{
+		float:right}
+
+		/*右侧的ul元素*/
+		.navright{
+			float: left;
+		}
+		.navright ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			float: left;
+		}
+		.navright ul li{
+			display: inline-block;
+		}
+
+		.navright ul li a{
+			display: block;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			font-weight: bold;
+			font-size: 14px;
+			color: #ffffff;
+			text-align: center;
+			text-decoration: none;
+		}
+		/*鼠标滑过*/
+		.navright ul li a:hover{
+			background:#CD2A2C
+		}
+
+		/*分类的下拉框制作*/
+		.category{
+			width: 990px;
+			margin: 0 auto;
+		}
+
+		.category ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			width:210px;
+			height: 400px;
+			box-sizing: border-box;
+			/*加边框*/
+			border: 2px #CD2A2C solid;
+			border-top: none;
+			background: #ececec;
+			padding-top: 5px;
+
+		}
+
+		.category ul li{
+			/*设置宽度，下划线，左边距，下边距，上边距*/
+			padding: 5px 0 5px 10px;
+			width: 186px;
+			border-bottom: #9A9A9A 1px solid;
+
+		}
+
+		.category ul li:hover{
+			background: #cccccc;
+		}
+
+		.category ul li a{
+			text-decoration: none;
+			color: #414141;
+			font-size: 15px;
+			font-weight: normal;
+			line-height: 40px;
+		}
+
+
+
+
+		
+	</style>
+	</head>
+	<body>
+	<div id="nav" style="clear:both">
+		<div class="nav-left" style="clear:both">
+			<div class="nav-text">
+				<a href="#">全部商品分类</a>
+			</div>
+			<div class="imgcross">
+			插入箭头图片
+			</div>
+		</div>
+		<div class="navright">
+			<ul >
+				<li><a href="#">首页</a></li>
+					<li><a href="#">服装城</a></li>
+					<li><a href="#">团购</a></li>
+					<li><a href="#">拍卖</a></li>
+					<li><a href="#">海外淘</a></li>
+					<li><a href="#">秒杀专场</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="category">
+		<ul class="classify-box">
+
+			<li><a href="#">图书，影像，唱片</a></li>
+			<li><a href="#">手机，数码</a></li>
+			<li><a href="#">母婴，服饰</a></li>
+
+		</ul>
+	</div>
+	</body>
+
+</html>
