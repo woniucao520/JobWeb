@@ -64,7 +64,7 @@ body{
     background: url(../imgs/index02.png) no-repeat  left;
     padding-right: 10px;
 
-    border-right: #ff8600 1px solid;/*右侧添加下划线*/
+    border-right: #fff 1px solid;/*右侧添加下划线*/
 }
 
 /*中间导航栏部分*/
@@ -72,7 +72,7 @@ body{
     background: #ffffff;   /*为何给他设置的背景会失效呢，是由于浮动的原因么*/
     padding-top: 20px;
     text-align: center;
-    border: 2px #3b5998 solid; /*我加了边框线为了能看出来*/
+ /*   border: 2px #3b5998 solid; 我加了边框线为了能看出来*/
     height: 70px;
 }
 
@@ -90,12 +90,12 @@ body{
      margin-top: 15px; /*使得该导航栏居中显示*/
 }
 
-li{
+.nav-right ul li{
     display: inline-block;/*行内块元素*/
 
 }
 
-li a{
+.nav-right ul li a{
     display: block;
     text-decoration: none; /*清除文字原来的大小*/
     font-size: 16px;
@@ -113,12 +113,12 @@ li a{
 }
 
 /*鼠标滑过的颜色变化*/
-li a.active{
+.nav-right ul li a.active{
     color:#FF8600;
 }
 
-li a:hover{
-  color:#FF8600 ;
+.nav-right ul li a:hover{
+  color:#FF8600;
 }
 
 
@@ -128,14 +128,20 @@ li a:hover{
     height: 400px;
 }
 
+
+.banner .container{
+    position: relative;
+}
+
 .middle-text{
 
-    float: left;
+
     padding-top: 100px;
     width: 1000px;
 
     text-align: center;
     padding-left: 100px;
+    z-index: 1;
 
 
 }
@@ -165,228 +171,228 @@ li a:hover{
 
 }
 
+.banner .container .pre-left,
+.banner .container .pre-right{
+    position: absolute;
+    width:70px;
+    height: 70px;
+    background-color: RGBA(0,0,0, .3);
+    text-align: center;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.banner .container .pre-left{
+    top:148px;
+}
+
+.banner .container .pre-right{
+    top:148px;
+    right:0;
+}
+
+
 .arrow{
-            position: absolute;
-            top: 280px;
-            width: 60px;
-            height: 60px;
             font-size: 36px;
             font-weight: bold;
-            line-height: 59px;
+            line-height: 60px;
             text-align: center;
             color: #fff;
-            background-color: RGBA(0,0,0, .3);
+            text-decoration: none;
+
         }
 
- .arrow:hover{   <!--鼠标滑过时的颜色 -->
-    color: #ff8600;
+
+
+
+.banner .container .pre-left:hover{   <!--鼠标滑过时的颜色 -->
+      background: #f012be;
 }
 
-#prev{
-    left: 30px;
-}
-#next{
-    right: 30px;
-}
+
 
 
 
 /*新闻动态*/
+
 .news{
-    margin-top: 25px;
     width: 1200px;
-     margin: 0 auto;
-    background: #fff;
-
-}
-
-
-.news-title{
-
-    padding-top: 20px;
-    border-bottom: #eea236 1px solid;
-    padding-bottom: 10px;
-}
-
-
-.news-left{
-    width: 600px;
-    border: 1px #f012be solid;
-    float: left
-}
-
-.news-title-left{
-    display: inline;
-    float: left;
-}
-
-.news-title h3{
-    color: #666;
-    font-size: 20px;
-    font-weight: normal;
-}
-
-.news-title h3 span{
-    font-size: 16px;
-    color: #999;
-    font-weight: normal;
-}
-
-
-
-
-.news-title-right{
-    display: inline;
-    float: right;
-}
-
-.news-title h4{
-    font-weight: normal;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.news-title h4 a{
-    font-size: 10px;
-    color: #666;
-    text-decoration: none;
-
-    -webkit-transition: color 200ms;  /*字体颜色切换的过渡*/
-    -o-transition: color 200ms;
-    transition: color 200ms;
-}
-.news-title h4 a:hover{
-        color:#FF8600;
-}
-
-/*新闻列表*/
-.news-lists{
-    border: #125acd 1px solid;
-    padding-left: 15px;
+    margin: 0 auto;
+    background: #ffffff;
     margin-top: 10px;
-}
-.news-item{
-     border: #FF8600 1px solid;
-    margin-bottom: 15px;
 
 }
-.data-left{
-    width:63px ;
-    height: 66px;
+
+.news .box-news{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*左边的盒子*/
+.news .box-news .news-lists{
+    float: left;
+    margin-right: 60px;
+}
+.news .box-news .news-video .news-top,
+.news .box-news .news-lists .news-top{
+    width: 530px;
+    border-bottom: 1px #999 solid ;
+    padding-bottom: 8px;
+}
+
+
+.news .box-news .news-video .news-top h4,
+.news .box-news .news-video .news-top span,
+.news .box-news .news-lists .news-top h4,
+.news .box-news .news-lists .news-top span{
+    float: left;
+    font-weight: bold;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+
+}
+
+.news .box-news .news-video .news-top a,
+.news .box-news .news-lists .news-top a{
+    float: right;
+    text-decoration: none;
+     color: #999;
+    font-size: 14px;
+     line-height:25px ;
+}
+
+/*左侧下半部分之日期和月份*/
+.cont-item{
+    margin-bottom: 15px;
+}
+.news-cont{
+    padding: 10px;
+}
+
+/*日期*/
+.news-cont .item-date{
+    float: left;
+    width: 65px;
     background: #999;
+}
+.news-cont .item-date h4{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px #ffffff dashed;
+    padding: 5px;
+}
+.news-cont .item-date h5{
+    color: #ffffff;
+    font-size: 13px;
+    text-align: center;
+     padding: 5px;
+}
+
+/*右半部分文字*/
+.item-text{
+    float: left;
+    width:410px;
+    margin-left: 20px;
+    padding-right: 5px;
+}
+
+.item-text .toptext .little-title{
+    float: left;
+
+}
+
+.item-text .toptext .little-title a{
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+}
+
+.item-text .toptext .timedate{
+    float: right;
+}
+
+.item-text .toptext .timedate a{
+    text-decoration: none;
+    color: #ccc;
+    font-size: 12px;
+
+}
+.item-text h4{
+    color: #999;
+    font-size: 10px;
+    font-weight: normal;
+    padding-top: 5px;
+}
+
+/*右侧部分*/
+.news-video{
     float: left;
 }
 
-.data-left h3{
-    font-size: 25px;
-    color: #fff;
-    width: 63px;
-    text-align: center;
-    padding-top: 6px;
-}
-.data-left h4{
-    font-size: 12px;
-    border-top: #E6E6E6 1px dashed;
-    width: 63px;
-    text-align: center;
-    color: #fff;
-    padding-top: 6px;
-}
 
 
-
-.news-text-right{
-    display: inline;
-    float: right;
-    width: 500px;
-    line-height: 1.1;
-}
-.news-text-right h3 a{
-    text-decoration: none;
-    font-size: 14px;
-    color: #333;
-
-    font-weight: normal;
-}
-
-.news-text-right h3 span{
-
-
-    font-size: 12px;
-    color: #ccc;
-    margin-left: 145px;
+/*右侧重要的类似视频播放的效果*/
+.video-play{
+    margin: 10px;
+    padding-right: 50px;
 
 }
-.news-text-right p a{
-     text-decoration: none;
-    font-weight: normal;
-    font-size: 12px;
-    color: #999;
-}
-.news-text-right p a:hover,
-.news-text-right h3 a:hover
-{
-   color:#FF8600;
-    -webkit-transition: color 200ms;  /*字体颜色切换的过渡*/
-    -o-transition: color 200ms;
-    transition: color 200ms;
-}
 
-
-/*新闻列表的右侧-宣传图片*/
-.news-right{
-    display: inline;
-    float: right;
-    width: 550px;
-    border: 1px #f012be solid;
-}
-
-.news-video{
-    background: #000000;
-    width: 300px;
-    height: 10px;
-    margin-top: 15px;
-
-
-}
-.gray{
-    padding: 16px 30px 5px 30px;
+.video-play .first-box{
+    padding: 15px;
     background: #ECECEC;
-    font-size: 14px;
-    color: #666;
-    text-align: center;
 }
-.video{
-    width: 400px;
-    height: 210px;
+
+.video-play .first-box .second-box{
+   text-align: center;
     background: url(../imgs/honor01.jpg) no-repeat center;
-    box-sizing: border-box;
-    margin-top: 7px;
+    width:400px;
+    height:210px;
+    position: relative;
+
 }
-.play{
+
+.video-play .first-box .second-box .play-radus{
     width: 70px;
     height: 70px;
+    background-color: rgba(104,104,104,.5);
     border-radius: 50%;
-    background: url(../imgs/honor03.png) repeat;
-    text-align: center;
+    /*移动位置*/
+    position: absolute;
+    top:75px;
+    left: 150px;
+
 }
-.play img{
-    padding: 20px 21px 19px 28px;
+
+.video-play .first-box .second-box .play-radus .logoplay{
+    padding-top: 20px;
+    padding-left: 5px;
 }
+
+
+
+
+
+
 
 
 /*案例*/
 .case{
     width: 1200px;
     margin: 0 auto;
-    border:  1px #f012be solid;
+ /*   border:  1px #f012be solid; */
     margin-top: 10px;
+    padding-top: 10px;
     background: #fff;
 }
 
 /*案例标题*/
 .case-title{
-    border: solid 2px #f012be;
+  /*  border: solid 2px #f012be;*/
     text-align: center;
     line-height: 1.2;
     margin: 10px 0px;
@@ -419,10 +425,11 @@ li a:hover{
     color: #ff8600;
 
 }
+
 /*下面图片的效果*/
 .casecont{
     margin: 20px;
-    border: #ff8600 1px solid;
+ /*   border: #ff8600 1px solid; */
 }
 
 /*左半部分*/
@@ -511,7 +518,7 @@ li a:hover{
 
 /*案例图片的下半部分*/
 .casebottom{
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 
@@ -571,6 +578,7 @@ li a:hover{
 /*右半部分*/
 .caseright-fr{
     float: right;
+    padding-bottom: 30px;
 }
 
 .caseright-img{
@@ -587,8 +595,9 @@ width: 332px;
 .tool{
     width: 1200px;
     margin: 0 auto;
-    border:  1px #f012be solid;
+ /*   border:  1px #f012be solid;*/
     margin-top: 10px;
+    padding-top: 10px;
     background: #fff;
 }
 
@@ -596,6 +605,7 @@ width: 332px;
 .teamscont,
 .toolcont{
     margin: 20px 30px;
+    padding-bottom: 30px;
 }
 .toolcase{
     float: left;
@@ -670,7 +680,7 @@ width: 332px;
 
 /*设计师的案例*/
 .teamsbottom{
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 20px;
 }
 
@@ -683,6 +693,7 @@ width: 332px;
 
 .teamstop-left{
     float: left;
+    height: 177px;
     background: #ececec;
     margin-right: 9px;
     padding-right: 55px;
@@ -698,6 +709,7 @@ width: 332px;
 
 .teamstop-right{
     float: right;
+    height: 177px;
     background: #ececec;
     margin-right: 10px;
     padding-right: 32px;
@@ -748,7 +760,7 @@ width: 332px;
 
 .teamscont-right .teamimg{
     position: absolute;
-    left: -32px;
+    left: -35px;
 }
 
 
@@ -814,13 +826,16 @@ width: 332px;
 }
 .middle-cont .top-item{
     float: left;
-    width: 240px;
+    width: 235px;
     font-weight: normal;
     font-size: 12px;
     padding: 5px;
     background: #2C2C2C;
     margin-right: 10px;
     text-align: center;
+}
+.middle-cont .top-item a{
+    display: block;
 }
 
 .middle-cont .top-item img{
@@ -842,24 +857,23 @@ width: 332px;
 }
 
 /*右侧的ul样式*/
-ul .activity-text{
+.middle-cont ul{
     float: left;
-
+    margin-left: 5px;
     list-style-type:none;
 
 }
-.activity-text li{
-
+.middle-cont ul li{
     border-bottom:#2C2C2C 1px solid;
-
-
+    display: block;
+    padding-bottom: 2px;
 }
-.activity-text li a{
+
+.footer-middle .middle-container .middle-cont ul li a{
     display: block;
     text-decoration: none;
+    text-align: left;
     color: #fff;
     font-size: 12px;
-    width: 130px;
     height: 30px;
-
 }

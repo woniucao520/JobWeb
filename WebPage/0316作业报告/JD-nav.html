@@ -86,29 +86,60 @@
 			background: #ececec;
 			padding-top: 5px;
 
-		}
-
-		.category ul li{
-			/*设置宽度，下划线，左边距，下边距，上边距*/
-			padding: 5px 0 5px 10px;
-			width: 186px;
-			border-bottom: #9A9A9A 1px solid;
+			/*设置相对定位，给menu作参考*/
+			position: relative;
 
 		}
 
-		.category ul li:hover{
-			background: #cccccc;
+
+
+		.category ul li a:hover{
+			background: #fff;
+
+			z-index: 100;
+
+			/*鼠标经过li，设置z-index属性覆盖menu属性*/
 		}
 
 		.category ul li a{
+			display: block;
 			text-decoration: none;
 			color: #414141;
 			font-size: 15px;
 			font-weight: normal;
 			line-height: 40px;
+			/*将li标签的属性，全部赋值给a标签*/
+
+			/*设置宽度，下划线，左边距，下边距，上边距*/
+			padding: 5px 0 5px 10px;
+			width: 186px;
+			border-bottom: #9A9A9A 1px solid;
+
+			position: relative;/*为了设置z-index属性*/
+			/*由于li标签是divclass=menu的父类，所以永远没有办法覆盖menu*/
+
+
 		}
 
 
+		/*弹出的菜单栏*/
+		.menu{
+			width:700px;
+			height: 400px;
+			border: 2px #9A9A9A solid;
+			background: #fff;
+
+			display: none;
+
+			/*移动他的位置*/
+			position: absolute;
+
+			top: 0px;
+			left: 194px;
+
+			/*设置z-index属性*/
+			z-index: 10;
+		}
 
 
 		
@@ -141,7 +172,12 @@
 
 			<li><a href="#">图书，影像，唱片</a></li>
 			<li><a href="#">手机，数码</a></li>
-			<li><a href="#">母婴，服饰</a></li>
+			<li>
+				<a href="#">母婴，服饰</a>
+				<div class="menu">
+					我的菜单
+				</div>
+			</li>
 
 		</ul>
 	</div>

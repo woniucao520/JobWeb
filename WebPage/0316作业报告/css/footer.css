@@ -1,3 +1,4 @@
+
 .footer-addr{
     width: 100%;
     background: #333;
@@ -12,6 +13,7 @@
 
 .addrtel{
     float: left;
+
 }
 
 .addrtel ul{
@@ -23,8 +25,6 @@
     display: inline-block;
     background: url(../imgs/footer04.png) no-repeat left;
     margin-right: 20px;
-
-
 }
 
 .addrtel ul li a{
@@ -34,6 +34,12 @@
     font-size: 14px;
     line-height: 30px;
     text-align: left;
+    padding-left: 25px;
+}
+
+
+.addrtel .contactaddress{
+    margin-top: 3px;
 }
 
 .contactaddress span{
@@ -84,14 +90,14 @@
      border-right: none;
 }
 
-.addrbottom .decorate ul li:first-child a{
+.addrbottom .decorate .decorate-item li:first-child a{
     color: #ff8600;
     font-size: 14px;
     padding-right: 15px;
 
 }
 
-.addrbottom .decorate ul li a{
+.addrbottom .decorate .decorate-item li .decorate-href{
     display: block;
     text-decoration: none;
     color: #fff;
@@ -111,4 +117,22 @@
     color: #fff;
     font-size: 14px;
     text-align: center;
+}
+
+/*页脚部分*/
+.foot-bottom{
+    width: 100%;
+    background: #333;}
+
+
+.finallybox{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.finallybox a{
+    font-size: 10px;
 }
