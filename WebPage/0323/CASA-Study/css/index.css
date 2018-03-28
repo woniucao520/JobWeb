@@ -1,3 +1,8 @@
+body{
+    background: #F9F9F9;
+}
+
+
 /*头部导航部分 ：宽度：100%，高度：75px，背景颜色：#000*/
 .top-header{
     width: 100%;
@@ -41,7 +46,7 @@
 /*重点轮播图部分*/
 .container{
     width: 100%;
-    height: 400px;
+    height: 600px;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -58,7 +63,7 @@
 
 .pic li img{
     /*width: 1349px;*/
-    height: 400px;
+    height: 600px;
 }
 
 /*图片里点击的原点*/
@@ -85,6 +90,189 @@
 .buttons .on{
     background: orangered;
 }
+
+
+
+
+/*中间主要内容部分*/
+.content{
+    margin-top: 80px;
+}
+
+
+/*正文部分居中显示的盒子*/
+.content .content-box{
+    width: 1070px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*第一部分：案例部分*/
+/*顶部图标部分和文字*/
+.case .top{
+    width: 310px;
+    margin: 0 auto;
+}
+.case .top p{
+    font-size: 16px;
+    color: #b2b1b1;
+    border-bottom: 1px #d6d6d6 solid;
+    margin: 20px;
+    padding-bottom: 30px;
+}
+
+/*中间部分：所有图片设置左浮动*/
+.case .middle .middle-items{
+    float: left;
+}
+/*除去第一个，其他的设置左外间距*/
+.case .middle :not(:first-child){
+    margin-left: 20px;
+}
+/*图片下面的文字p，注意居中对齐*/
+.case .middle .middle-items p{
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    color: #787777;
+    padding-top: 10px;
+}
+
+/*鼠标经过，图片背景变换，实质是替换背景图片*/
+.case .middle .middle-items img:hover{
+
+    background:  url(../imgs/keting1.png) no-repeat -6px center;
+}
+
+
+/*底部 图片排列*/
+.case .bottom{
+    margin-top: 20px;
+}
+
+.case .bottom .bottom-up{
+    margin-bottom: 35px;
+}
+/*左边部分图片*/
+.bottom-up .style3 .style3-up,
+.bottom-up .style1 .style1-up{
+    margin-bottom: 13px;
+}
+/*设置相对定位*/
+.bottom-up .style2,
+.bottom-up .style3 .style3-down,
+.bottom-up .style3 .style3-up,
+.bottom-up .style1 .style1-down,
+.bottom-up .style1 .style1-up{
+    position: relative;/*为背景底色的位置做准备*/
+}
+
+
+.bottom-up .style1 .style1-down .block,
+.bottom-up .style1 .style1-up .block{
+    width: 324px;
+    height:32px ;
+    background:url(../imgs/black.png) repeat ;
+    position: absolute;
+    top: 153px;
+    display: none;
+}
+
+.bottom-up .style2 .block{
+   width: 412px;
+    height:50px ;
+    background:url(../imgs/black.png) repeat ;
+    position: absolute;
+    top: 337px;
+    display: none;
+}
+
+
+.bottom-up .style3 .style3-down .block p,
+.bottom-up .style3 .style3-up .block p,
+.bottom-up .style1 .style1-down .block p,
+.bottom-up .style1 .style1-up .block p{
+    line-height: 32px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.bottom-up .style2 .block p{
+    line-height: 50px;
+    color: #fff;
+    font-size: 15px;
+
+}
+/*当鼠标经过图片时*/
+.bottom-up .style2:hover .block,
+.bottom-up .style3 .style3-down:hover .block,
+.bottom-up .style3 .style3-up:hover  .block,
+.bottom-up .style1 .style1-down:hover .block,
+.bottom-up .style1 .style1-up:hover  .block{
+    display: block;
+}
+
+
+/*右侧部分图片*/
+.bottom-up .style2,
+.bottom-up .style3 {
+ margin-left: 25px;
+}
+
+
+
+
+
+.bottom-up .style3 .style3-down .block,
+.bottom-up .style3 .style3-up .block{
+    width: 280px;
+    height:32px ;
+    background:url(../imgs/black.png) repeat ;
+    position: absolute;
+    top: 153px;
+    display: none;
+}
+
+
+
+/*第二部分：家居定制customized*/
+/*外面总的盒子：设置外边距*/
+.customized{
+    margin-top: 20px;
+}
+/*顶部的loge图片，文字还有下边框*/
+.customized .top{
+    width: 310px;
+    margin: 0 auto;
+}
+.customized .top p{
+    font-size: 16px;
+    color: #b2b1b1;
+    border-bottom: 1px #d6d6d6 solid;
+    margin: 20px;
+    padding-bottom: 30px;
+}
+/*家具部分*/
+.customized .middle{
+    margin-top: 20px;
+}
+
+/*右半部分的文字列表排列*/
+.furniture .furniture-text a{
+    display: inline-block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    border-right: 1px #333 solid;
+    margin-left: 10px;
+    text-align: center;
+    padding-right: 10px;
+}
+
+
+
 
 /*页脚部分，背景图*/
 .footer{
