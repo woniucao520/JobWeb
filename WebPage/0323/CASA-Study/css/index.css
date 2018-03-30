@@ -88,7 +88,8 @@ body{
 }
 
 .buttons .on{
-    background: orangered;
+     background: #f60;
+
 }
 
 
@@ -109,10 +110,12 @@ body{
 
 /*第一部分：案例部分*/
 /*顶部图标部分和文字*/
+.service .top,
 .case .top{
     width: 310px;
     margin: 0 auto;
 }
+.service .top p,
 .case .top p{
     font-size: 16px;
     color: #b2b1b1;
@@ -258,6 +261,7 @@ body{
 }
 
 /*右半部分的文字列表排列*/
+.omaments .omaments-text a,
 .furniture .furniture-text a{
     display: inline-block;
     float: left;
@@ -325,10 +329,168 @@ body{
 }
 /*查看更多鼠标移动经过效果*/
 .bottom-first .block .want-more p:hover{
-       border: orangered 1px solid;
-      color: orangered;
+     color: #f60;
+    border: solid 1px #f60;
 
 }
+
+/*第二层：3张图片排列*/
+.bottom-second{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+.bottom-second .img-two,
+.bottom-second .img-third{
+    margin-left: 16px;
+}
+
+.bottom-second .img-two,
+.bottom-second .img-third,
+.bottom-second .img-one{
+    text-align: center;
+    position: relative;
+}
+
+
+
+
+.bottom-second .img-two .block,
+.bottom-second .img-third .block,
+.bottom-second .img-one .block{
+
+    width: 346px;
+    height: 218px;
+    background: url(../imgs/black.png) repeat;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    display: none;
+}
+
+
+
+.omaments-img-first .block p,
+.omaments-img-first .block p,
+.omaments-img-second .block p,
+.omaments-img-right .block p,
+.bottom-second .img-two .block p,
+.bottom-second .img-third .block p,
+.bottom-second .img-one .block p{
+
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 30px;
+
+
+}
+
+
+
+
+.omaments-img-first .block p:first-child,
+.omaments-img-first .block p:first-child,
+.omaments-img-second .block p:first-child,
+.omaments-img-right .block p:first-child,
+.bottom-second .img-two .block p:first-child,
+.bottom-second .img-third .block p:first-child,
+.bottom-second .img-one .block p:first-child{
+
+  padding-top: 50px;
+
+}
+
+.omaments-img-first .block p:last-child,
+.omaments-img-first .block p:last-child,
+.omaments-img-second .block p:last-child,
+.omaments-img-right .block p:last-child,
+.bottom-second .img-two .block p:last-child,
+.bottom-second .img-third .block p:last-child,
+.bottom-second .img-one .block p:last-child{
+    width: 80px;
+    margin: 0 auto;
+    height: 30px;
+    border: 1px #ffffff solid;
+    text-align: center;
+    margin-top: 10px;
+
+
+}
+
+.omaments-img-first .block p:last-child:hover,
+.omaments-img-first .block p:last-child:hover,
+.omaments-img-second .block p:last-child:hover,
+.omaments-img-right .block p:last-child:hover,
+.bottom-second .img-two .block p:last-child:hover,
+.bottom-second .img-third .block p:last-child:hover,
+.bottom-second .img-one .block p:last-child:hover{
+    color: #f60;
+    border: solid 1px #f60;
+
+}
+
+
+.omaments-img-first .block,
+.omaments-img-first .block,
+.omaments-img-second .block,
+.omaments-img-right .block{
+    display: none;
+}
+
+
+.omaments-img-first .img-two:hover .block,
+.omaments-img-first .img-one:hover .block,
+.omaments-img-second:hover .block,
+.omaments-img-right:hover .block,
+.bottom-second .img-two:hover .block,
+.bottom-second .img-third:hover .block,
+.bottom-second .img-one:hover .block{
+    display: block;
+}
+
+
+
+
+
+/*第四部分 服务*/
+.service{
+    margin-top: 30px;
+}
+
+
+/*图片设置上边据*/
+
+.service .bottom{
+    margin-top:30px ;
+}
+
+.service .bottom .text {
+    margin-top: 20px;
+    width: 230px;
+    height: 100px;
+    line-height: 20px;
+}
+.service .bottom .text h3{
+    font-size: 20px;
+    color: #333;
+}
+
+.service .bottom .text p{
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.hours,
+.response{
+    margin-left: 50px;
+   }
+
+
+
 
 /*页脚部分，背景图*/
 .footer{
@@ -365,4 +527,57 @@ body{
 .footer-box .footer-text p{
     line-height: 20px;
     color: #ffffff;
+}
+
+
+/*第二层饰品：*/
+.omaments-bottom{
+    margin-top: 20px;
+}
+
+/*图片的block大小设置*/
+.omaments-img-right,
+.omaments-img-second,
+.omaments-img-first .img-two,
+.omaments-img-first .img-one{
+    position: relative;
+}
+
+.omaments-img-first .img-one .block{
+    width: 203px;
+    height: 204px;
+    background: url(../imgs/black.png) repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.omaments-img-first .img-two .block{
+    width: 365px;
+    height: 204px;
+    background: url(../imgs/black.png) repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.omaments-img-second{
+    margin-top: 15px;
+}
+.omaments-img-second .block{
+        width: 583px;
+        height: 247px;
+        background: url(../imgs/black.png) repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+}
+
+.omaments-img-right .block{
+        width: 467px;
+        height: 470px;
+        background: url(../imgs/black.png) repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
 }
