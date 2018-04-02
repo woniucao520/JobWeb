@@ -71,7 +71,7 @@ body{
     position: absolute;
     z-index: 2;
     bottom: 30px;
-    left: 635px;
+    left: 47%;
     height: 10px;
     width: 150px;
 }
@@ -128,8 +128,14 @@ body{
 .case .middle .middle-items{
     float: left;
 }
+
+.case .middle .middle-items .block{
+    display: none;
+}
+
+
 /*除去第一个，其他的设置左外间距*/
-.case .middle :not(:first-child){
+.case .middle .middle-items:not(:first-child){
     margin-left: 20px;
 }
 /*图片下面的文字p，注意居中对齐*/
@@ -142,9 +148,13 @@ body{
 }
 
 /*鼠标经过，图片背景变换，实质是替换背景图片*/
-.case .middle .middle-items img:hover{
+.case .middle .middle-items:hover .block{
 
-    background:  url(../imgs/keting1.png) no-repeat -6px center;
+   display: block;
+}
+
+.case .middle .middle-items:hover .now{
+    display: none;
 }
 
 
