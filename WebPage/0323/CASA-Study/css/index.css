@@ -14,7 +14,9 @@ body{
     width: 1070px;
     margin: 0 auto;
 }
-
+.logo{
+    padding-top: 15px;
+}
 /*右侧导航栏，li左浮动，宽120，高75*/
 .top-box ul li{
     float: left;
