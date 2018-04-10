@@ -14,6 +14,7 @@ body{
     width: 1070px;
     margin: 0 auto;
 }
+
 .logo{
     padding-top: 15px;
 }
@@ -55,17 +56,23 @@ body{
 }
 
 .container .pic{
-    width: 5396px;
+    width: 100%;
     position: absolute;
     left: 0px;
 }
 .pic li{
+
+    width: 100%;
+    background-size:100%;
+    display: inline-block;
     float: left;
 }
 
-.pic li img{
-    /*width: 1349px;*/
+ .container .pic li img{
+
     height: 600px;
+
+
 }
 
 /*图片里点击的原点*/
@@ -73,9 +80,9 @@ body{
     position: absolute;
     z-index: 2;
     bottom: 30px;
-    left: 47%;
+    left: 50%;
     height: 10px;
-    width: 150px;
+
 }
 
 .buttons span{
@@ -112,11 +119,15 @@ body{
 
 /*第一部分：案例部分*/
 /*顶部图标部分和文字*/
+
+.design .top,
 .service .top,
 .case .top{
     width: 310px;
     margin: 0 auto;
 }
+
+.design .top p,
 .service .top p,
 .case .top p{
     font-size: 16px;
@@ -134,8 +145,6 @@ body{
 .case .middle .middle-items .block{
     display: none;
 }
-
-
 /*除去第一个，其他的设置左外间距*/
 .case .middle .middle-items:not(:first-child){
     margin-left: 20px;
@@ -158,6 +167,8 @@ body{
 .case .middle .middle-items:hover .now{
     display: none;
 }
+
+
 
 
 /*底部 图片排列*/
@@ -467,7 +478,8 @@ body{
 
 
 /*第四部分 服务*/
-.service{
+/*第三部分 设计*/
+.design{
     margin-top: 30px;
 }
 
@@ -504,23 +516,83 @@ body{
 
 
 
-/*页脚部分，背景图*/
-.footer{
-    background: url(../imgs/foot.jpg) no-repeat 50% center;
-    padding-top: 275px;
+/*第三部分设计*/
+
+.design .middle span{
+    display: inline-block;
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
 
 }
+
+.design .middle span:hover{
+    background: #333;
+    color: #fff;
+}
+
+/*设计师简介*/
+.designer-intro{
+    margin-top: 10px;
+
+}
+.designer-intro .intro-second{
+    padding-bottom: 40px;
+}
+
+.designer-intro .intro-second .img-item{
+    background: #fff;
+}
+
+/*设计师介绍文字排版*/
+.designer-intro .intro-second .img-item .intro-text{
+    padding: 10px;
+}
+.designer-intro .intro-second .img-item .intro-text p{
+    font-size: 14px;
+
+
+}
+
+.designer-intro .intro-second .img-item .intro-text .text-second p{
+    color:#b2b1b1 ;
+}
+.designer-intro .intro-second .img-item .intro-text .text-second{
+    margin-top: 5px;
+    padding: 5px 0 5px 0;
+    border-top: 1px solid #b2b1b1;
+}
+
+/*除去第一个img-item*/
+.designer-intro .intro-second .img-item:not(:first-child){
+    margin-left: 20.5px;
+}
+
+
+/*页脚部分*/
+.footer{
+    margin-top: 30px;
+}
+
 /*foot-box 让元素居中显示*/
 .footer .weixin{
-    width: 520px;
-    margin: 0 auto;
+    background: url(../imgs/foot.jpg) no-repeat  center;
+
+    height: 360px;
     text-align: center;
+   position: relative;
+}
+.footer .weixin .wenxin-box{
+  position: absolute;
+    top: 160px;
+    left: 36%;
+    width: 570px;
 
 }
 
 .footer .weixin .wx2,
 .footer .weixin .wx3{
-    margin-left: 35px;
+    margin-left: 50px;
 }
 
 
@@ -529,8 +601,9 @@ body{
     background: #4a4949;
 
     text-align: center;
-    margin-top: 50px;
     padding: 20px;
+
+
 
 }
 
