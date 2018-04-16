@@ -8,8 +8,8 @@
 <body>
     <!--头部-->
     <header id="top">
-        <div id="top_box clear_float">
-            <!--<img src="imgs/start.png">-->
+        <div class="top_box clear_float">
+            <img class="fl" src="imgs/star.jpg">
             <a  class="fl" href="#">收藏京东</a>
             <ul class="fr top_lists ">
                 <li>
@@ -22,7 +22,7 @@
                     <a href="#">我的订单</a>
                 </li>
 
-                <li>
+                <li class="vipclub">
                     <b></b>
                     <a href="#">会员俱乐部</a>
                 </li>
@@ -32,14 +32,23 @@
                     <a href="#">企业频道</a>
                 </li>
 
-                <li>
+                <li class="jd_app">
                     <b></b>
                     <a href="#">京东手机</a>
                 </li>
 
-                <li>
+                <li class="service">
                     <b></b>
                     <a href="#">客户服务</a>
+                    <!--弹出菜单栏-->
+                    <ul class="service_lists">
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">帮助中心</a></li>
+
+                    </ul>
                 </li>
 
                 <li>
@@ -52,16 +61,50 @@
         </div>
     </header>
     <!--logo与搜索框-->
-    <div id="top_main">
-        Logo和search
+    <div class="top_main clear_float" >
+        <a class="fl" href="#">
+            <img src="imgs/">
+        </a>
+
+        <div class="search_box fl">
+            <!--搜索框-->
+            <div class="search">
+                <input class="textsearch">
+                <button>搜索</button>
+            </div>
+            <!--热搜关键词-->
+            <div class="hot_word">
+            </div>
+        </div>
+
+        <div class="my_jd fl">
+            <a href="#">我的京东</a>
+        </div>
     </div>
     <!--导航栏-->
-    <nav id="nav">
-       导航栏
+    <nav class="nav clear_float">
+        <!--全部商品分类-->
+        <p class="fl"><a href="#">全部商品分类</a></p>
+
+        <!--导航条-->
+        <ul class="nav_detail fl">
+            <li><a>首页</a></li>
+            <li><a>服装城</a></li>
+            <li><a>食品</a></li>
+            <li><a>团购</a></li>
+            <li><a>夺命岛</a></li>
+            <li><a>闪购</a></li>
+            <li><a>金融</a></li>
+        </ul>
+
     </nav>
     <!--banner:广告轮播图-->
     <div id="banner">
-         右部菜单和banner广告
+        <!--左侧产品列表-->
+         <ul class="category">
+             <li><a>图书、音响、数字商品</a></li>
+             <li><a>家用电器</a></li>
+         </ul>
     </div>
     <!--主体内容-->
     <div id="main">

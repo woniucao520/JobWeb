@@ -1,5 +1,5 @@
 /*测试可视化*/
-#top_main,#nav,#banner,#main,#foot_box,#footer{
+#top_main,#nav,#main,#foot_box,#footer{
     border: 1px solid #333;
 }
 
@@ -21,10 +21,10 @@ a:hover{
     color:#ff0700;
     text-decoration:underline;
 }
-*{
-    margin:0;
-    padding:0;
-    list-style:none;
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+	margin:0;
+	padding:0;
+	list-style:none;
 }
 
 /*左右浮动*/
@@ -45,7 +45,7 @@ a:hover{
 
 /*开始布局*/
 /*元素水平居中，w：1211px*/
-#top_box,#top_main,#nav,#banner,#main,#foot_box,#footer{
+.top_box,#top_main,#nav,#banner,#main,#foot_box,#footer{
     width: 1211px;
     margin: 0 auto;
 }
@@ -54,13 +54,199 @@ a:hover{
 #top{
     width: 100%;
     height: 30px;
-    color: #f7f7f7;
+    background: #f7f7f7;
     line-height: 30px; /*为了让文字水平垂直居中*/
 }
 
+/*图片位置的调整*/
+.top_box>img{
+    margin: 9px 5px 0 0 ;
+}
+
 /*右半部分，文字列表*/
-#top_box>ul>li{
+.top_lists > li{
     float: left;
     margin-right: 5px;
 }
 
+
+/*右半部分的分割线*/
+.top_box ul li b{
+    border-left: 1px solid #ddd;
+    margin-right: 5px;
+}
+
+/*会员俱乐部左侧图标*/
+.jd_app a{
+    background: url(../imgs/iconlist_2.png) no-repeat -128px -360px;
+    padding-left: 16px;
+}
+
+/*弹出菜单效果*/
+/*客户服务*/
+.service{
+    position: relative;
+}
+/*弹出服务列表*/
+.service .service_lists {
+    text-align: center;
+    width: 80px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: none;/*无上边框*/
+    box-sizing: border-box;
+    position: absolute;
+    top:27px;
+    left: 6px;
+     display: none;
+}
+
+.service>a{
+
+    display: inline-block;
+    border:1px solid transparent;/*边框是透明的*/
+	border-bottom:0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    height: 26px;
+    line-height: 26px;
+
+}
+/*.service a:hover{*/
+
+    /*border-color:#ddd;*/
+    /*background: #ffffff;*/
+/*}*/
+
+/*当鼠标经过，显示列表*/
+.service:hover .service_lists{
+    display: block;
+}
+.service:hover>a{
+        border-color:#ddd;
+    background: #ffffff;
+}
+
+
+/*搜索框*/
+/*上下边距为10px*/
+.top_main{
+    width: 1211px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/*搜索框部分*/
+/*距离左边80px，右边40px*/
+.search_box{
+    margin: 0 40px 0 80px;
+}
+
+/*搜索栏目：背景色，w:500,h:30*/
+.search_box .search{
+    background: #E4393C;
+    width: 500px;
+    height: 30px;
+    padding: 3px;
+
+}
+
+/*input输入框样式*/
+.search_box .textsearch{
+    width: 410px;
+    height: 24px;
+}
+
+/*button样式*/
+/*清除button默认样式*/
+.search_box button{
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 80px;
+}
+
+/*我的京东按钮*/
+.top_main .my_jd{
+
+    width:72px ;
+    height:27px ;
+    line-height: 27px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+    margin-left: 40px;
+    text-align: center;
+    /*添加右侧背景图片*/
+    margin-top: 3px;
+
+}
+
+/*导航栏*/
+.nav{
+    width: 1211px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    background: #e64346;
+    font-size: 14px;
+
+}
+/*导航左侧：全部商品分类*/
+.nav>p{
+    width: 210px;
+    height: 40px;
+    background: #cd2a2c;
+
+
+}
+.nav>p a{
+
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+     padding-left: 20px;
+}
+
+/*导航右侧：导航列表:首页，服装城，食品，团购*/
+.nav_detail li{
+    float: left;
+}
+.nav_detail li a{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*鼠标滑过，背景色变化*/
+.nav_detail li:hover>a{
+    background: #cd2a2c;
+}
+
+/*banner的左侧*/
+#banner .category{
+    width: 210px;
+    height: 410px;
+    box-sizing: border-box;
+    border: 2px solid #cd2a2c;
+    border-top: 0;
+    padding-top: 10px;
+}
+
+/*li标签样式*/
+.category li{
+    width: 206px;
+    height: 30px;
+    line-height: 30px;
+}
+.category li a{
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    padding-left: 10px;
+}
