@@ -18,6 +18,12 @@
 	    <script src="js/bootstrap.min.js"></script>
 	    <script src="js/pace.min.js"></script>
 	    <script src="js/modernizr.custom.js"></script>
+
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+
+
+
+
 </head>
 <body>
 
@@ -36,11 +42,7 @@
 
                     <select class="form-control " name="Province" id="Province" style="margin-top: 20px">
                         <option>==选择数据库===</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+
                     </select>
 
 
@@ -49,22 +51,14 @@
 
                     <select class="form-control" name="City" id="City"  style="margin: 20px 0">
                         <option>==请选择选择表===</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+
                     </select>
 
 
 
                     <select class="form-control" name="Village" id="Village">
                         <option>==请选择查询字段===</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+
                     </select>
 
             </div>
@@ -109,8 +103,93 @@
 
 
 
-  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+    <!--三级联动的js-->
+    <script src="js/city.js"></script>
+<script>
+
+//模拟数据~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ var items=[
+                {
+                'province_id':22,
+                'province_name': '山东',
+                'citys': [
+                            {
+                            'city_name': '聊城市',
+                            'city_id':291,
+                            'areas': ['莘县', '阳谷县'],
+                            },
+                            {
+                            'city_name': '济南市',
+                            'city_id':283,
+                            'areas': ['历下区', '市中区'],
+                            }
+                    ]
+                },
+
+                 {
+                'province_id':26,
+                'province_name': '江苏',
+                'citys': [
+                            {
+                            'city_name': '扬州',
+                            'city_id':100,
+                            'areas': ['江都', '高邮','宝应'],
+                            },
+                            {
+                            'city_name': '南京市',
+                            'city_id':103,
+                            'areas': ['江宁区', '秦淮区','建邺区'],
+                            },
+                            {
+                            'city_name': '连云港',
+                            'city_id':111,
+                            'areas': ['灌云区', '赣榆区','东海区'],
+                            }
+
+                    ]
+                },
+
+             {
+                'province_id':30,
+                'province_name': '安徽',
+                'citys': [
+                            {
+                            'city_name': '宣城',
+                            'city_id':200,
+                            'areas': ['宣城A', '宣城B','宣城C'],
+                            },
+                            {
+                            'city_name': '马鞍山',
+                            'city_id':203,
+                            'areas': ['马鞍山A', '马鞍山B','马鞍山C'],
+                            }
+                    ]
+                },
+
+        ]
+
+//模拟数据~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//第一步：自动填充省份
+        function  showProv() {
+        //获取省份元素：
+           var seleProv = $('#Province')
+            var len = items.length;
+            for(var i=0;i<len;i++){
+
+
+            }
+        }
+
+
+    </script>
 
 </body>
 </html>
