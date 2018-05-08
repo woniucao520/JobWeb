@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 实例 - 模态框（Modal）插件</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+
+</head>
+<body>
+
+<h2>创建模态框（Modal）</h2>
+<!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="save_dashboard">
+	开始演示模态框
+</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body">
+
+                <table id="userviewlist"
+                class="table text-nowrap table-hover table-bordered table-condensed table-striped">
+                <tr class="ths">
+                    <th><input type="checkbox" id="selectAll"/></th>
+
+                    <th>slice_id</th>
+
+                    <th>slice_name</th>
+
+                    <th>chart_type</th>
+
+                    <th>update_time</th>
+                    <th>location</th>
+
+
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="6"></td>
+                <td class="col-md-1">6</td>
+                <td class="col-md-1">为企业节省资金_汇总图</td>
+                <td class="col-md-1">汇总图</td>
+                <td class="col-md-2">2018-04-19 17:18:56</td>
+                    <td class="col-mid-2">
+
+                        <select class="form-control" name="City"  select_id="6" value="6">
+                            <option>==请选择选择表===</option>
+
+                    </select>
+                    </td>
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="7"></td>
+                <td class="col-md-1">7</td>
+                <td class="col-md-1">已拯救杨树数量_汇总图</td>
+                <td class="col-md-1">汇总图</td>
+                <td class="col-md-2">2018-04-19 17:19:22</td>
+
+                     <td class="col-mid-2">
+
+                        <select class="form-control" name="City" select_id="7" value="7">
+                            <option>==请选择选择表===</option>
+
+                    </select>
+                    </td>
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="8"></td>
+                <td class="col-md-1">8</td>
+                <td class="col-md-1">_柱状图</td>
+                <td class="col-md-1">柱状图</td>
+                <td class="col-md-2">2018-04-19 12:19:38</td>
+
+                     <td class="col-mid-2">
+
+                        <select class="form-control" name="City"  select_id="8" value="8">
+                            <option>==请选择选择表===</option>
+
+                    </select>
+                    </td>
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="9"></td>
+                <td class="col-md-1">9</td>
+                <td class="col-md-1">饼图_饼图</td>
+                <td class="col-md-1">饼图</td>
+                <td class="col-md-2">2018-04-20 17:52:47</td>
+                     <td class="col-mid-2">
+
+                        <select class="form-control" name="City"  select_id="9" value="9">
+                            <option>==请选择选择表===</option>
+
+                    </select>
+                    </td>
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="1"></td>
+                <td class="col-md-1">1</td>
+                <td class="col-md-1">中国地图_中国地图</td>
+                <td class="col-md-1">中国地图</td>
+                <td class="col-md-2">2018-04-19 16:03:35</td>
+                     <td class="col-mid-2">
+
+                        <select class="form-control" name="City"  select_id="1" value="1">
+                            <option>==请选择选择表===</option>
+
+                    </select>
+                    </td>
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="2"></td>
+                <td class="col-md-1">2</td>
+                <td class="col-md-1">柱状图_柱状图</td>
+                <td class="col-md-1">柱状图</td>
+                <td class="col-md-2">2018-04-19 16:04:11</td>
+                     <td class="col-mid-2">
+
+                        <select class="form-control" name="City" select_id="2"  value="2">
+                            <option>==请选择选择表===</option>
+
+                    </select>
+                    </td>
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="3"></td>
+                <td class="col-md-1">3</td>
+                <td class="col-md-1">折线图_折线图</td>
+                <td class="col-md-1">折线图</td>
+                <td class="col-md-2">2018-04-19 16:04:42</td>
+                     <td class="col-mid-2">
+
+                        <select class="form-control" name="City"  select_id="3" value="3">
+                            <option>==请选择选择表===</option>
+
+
+                    </select>
+                    </td>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="4"></td>
+                <td class="col-md-1">4</td>
+                <td class="col-md-1">表格_表格</td>
+                <td class="col-md-1">表格</td>
+                <td class="col-md-2">2018-04-19 16:04:57</td>
+                     <td class="col-mid-2">
+
+                        <select class="form-control" name="City" select_id="4" value="4" >
+                            <option>==请选择选择表===</option>
+
+
+                    </select>
+                    </td>
+                </tr>
+
+                <tr class="active">
+                <td class="col-md-1"><input type="checkbox" name="slice_id" value="5"></td>
+                <td class="col-md-1">5</td>
+                <td class="col-md-1">总开票量_汇总图</td>
+                <td class="col-md-1">汇总图</td>
+                <td class="col-md-2">2018-04-19 16:05:21</td>
+                 <td class="col-mid-2">
+
+                        <select class="form-control" name="selected" select_id="5" value="5">
+                            <option>==请选择选择表===</option>
+
+
+                    </select>
+                    </td>
+                </tr>
+
+                </table>
+                </div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary">
+					提交更改
+				</button>
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+            <!--操作节点-->
+<script>
+
+    $(document).ready(function () {
+        $("#save_dashboard").click(function () {
+
+                //填充节点
+                    var temparry = [1,2,4];
+                    for(var j=0;j<temparry.length;j++){
+                        var option = '<option value="'+temparry[j]+'">' + temparry[j]+ '</option>';
+                               $("select").append(option);
+                        }
+
+
+            var objarry = $("input[name='slice_id']");
+
+
+           // $("input[name='slice_id']").each(function () {
+           //
+           //     alert($(this).attr("checked"))
+           // });
+
+            for(var i=0;i<objarry.length;i++){
+                objarry[i].onclick = function () {
+                    var checked = $(this).attr("checked");
+
+                    alert("checkbox是否被选中："+checked);
+
+
+                if(checked == true){
+                    var num = $(this).val();
+                    alert('获取第几个弹框'+num);
+                    //寻找父节点
+                  var K =  $("select").attr("select_id");
+                  alert(K)
+
+
+                }
+
+
+
+                }
+            }
+
+        })
+    })
+
+</script>
+
+
+
+
+</body>
+</html>
