@@ -206,17 +206,23 @@
 <script>
 
     $(document).ready(function () {
+
+
+
+
+            var objarry = $("input[name='slice_id']");
+
         $("#save_dashboard").click(function () {
 
                 //填充节点
-                    var temparry = [1,2,4];
+            $("select").find("option:not(:first)").remove();
+
+          var temparry = [1,2,4];
+          console.log(temparry.length);
                     for(var j=0;j<temparry.length;j++){
                         var option = '<option value="'+temparry[j]+'">' + temparry[j]+ '</option>';
                                $("select").append(option);
                         }
-
-
-            var objarry = $("input[name='slice_id']");
 
 
            // $("input[name='slice_id']").each(function () {
@@ -226,6 +232,12 @@
 
             for(var i=0;i<objarry.length;i++){
                 objarry[i].onclick = function () {
+
+
+
+
+
+
                     var checked = $(this).attr("checked");
 
                     alert("checkbox是否被选中："+checked);
@@ -234,9 +246,34 @@
                 if(checked == true){
                     var num = $(this).val();
                     alert('获取第几个弹框'+num);
-                    //寻找父节点
-                  var K =  $("select").attr("select_id");
-                  alert(K)
+
+                    //寻找被点击的下拉框事件；
+                    K = $("select");
+                    for(var j= 0;j<K.length;j++){
+                        K[j].onclick=function () {
+
+
+                            var result_num = $(this).attr("select_id"); //通过select_id;获取具体的下拉框
+                            //如果选择的checkbox和select的id相同
+                            if(num == result_num){
+                                //从option中获取已经选择的位置
+                                var temp_place =Number($(this).find("option:selected").text());
+                                alert("已经选择的位置是："+ temp_place);
+                                console.log("temp_place选择位置"+temp_place);
+                                //从原来位置[1.2.4]中，剔除已经选择的place
+
+                                select_id_index = jQuery.inArray(temp_place,temparry);
+                                  console.log(select_id_index);
+                          temparry222 =temparry.slice(select_id_index);  //splice会修改原来的数组
+                                // temparry.splice(select_id_index,1);  //splice会修改原来的数组
+                                console.log(temparry);
+                                  console.log("temparry222新的结果"+temparry.slice(select_id_index,1));
+
+
+                            }
+                        }
+
+                    }
 
 
                 }
