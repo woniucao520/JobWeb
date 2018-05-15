@@ -12,12 +12,42 @@
     <script type="text/javascript" src="js/tabdemo.js"></script>
 
     <script>
+        window.onload = function () {
+            //填写js逻辑
+            //获取ul里li的个数
+            var tab_li = document.getElementsByTagName("li");
+            //获取要显示的div的个数
+            var content = document.getElementById("content");
+            var content_div = content.getElementsByTagName("div");
 
-        // window.onload = function () {
-        //     //填写js逻辑
-        // }
+            //给li添加鼠标点击事件
+            for(var i= 0;i<tab_li.length;i++){
+
+                    // tab_li[i].index = i;
+                    // alert("新设置的i:"+i);
+                tab_li[i].onmouseover = function () {
+                   alert("未设置的i"+i);  //为何i的取值为3
+                    //清除之前的样式
+                    for(var j=0;j<tab_li.length;j++){
+                          alert("鼠标点击事件里的j"+j);
+                        tab_li[j].classList.remove("active");
+                        content_div[j].setAttribute("class","hidden");
+                    }
+                    //设置自己本身的样式:添加class=active
+                    this.setAttribute("class","active");
+                    content_div[i].classList.remove("hidden");
+                 //将对应的内容显示出来
+                 //    content_div[this.index].classList.remove("hidden");
 
 
+
+
+
+
+                }
+            }
+
+        }
     </script>
 </head>
 <body>
@@ -26,29 +56,28 @@
 
 <div id="wrap">
     <ul class="tabdemo clear-float">
-        <li><a href="#">选择1</a></li>
+        <li class="active"><a href="#">选择1</a></li>
         <li><a href="#">选择2</a></li>
         <li><a href="#">选择3</a></li>
     </ul>
 
     <!--弹出内容-->
-    <div class="content">
-
-        <div id="first">
+    <div id="content">
+        <div id="first" class="show">
             <a href="#">内容一</a>
             <a href="#">内容一</a>
             <a href="#">内容一</a>
             <a href="#">内容一</a>
         </div>
 
-        <div id="second">
+        <div id="second" class="hidden">
             <a href="#">内容二</a>
             <a href="#">内容二</a>
             <a href="#">内容二</a>
             <a href="#">内容二</a>
         </div>
 
-        <div id="third">
+        <div id="third" class="hidden">
             <a href="#">内容三</a>
             <a href="#">内容三</a>
             <a href="#">内容三</a>
