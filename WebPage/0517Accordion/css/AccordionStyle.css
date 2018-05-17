@@ -1,0 +1,42 @@
+#wrap{
+    width: 300px;
+    border: 1px solid #999999;
+    margin-left: 30px;
+}
+
+
+/*给ul添加样式*/
+ul{
+    padding: 10px;
+}
+
+ul li a{
+    display: inline-block;
+    background: dimgrey;
+    width: 280px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+
+}
+li .tag{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+/*点击显示的内容*/
+li .text{
+    width: 280px;
+    text-align: center;
+    line-height: 40px;
+    display: none;
+    }
+
+li.active .text{
+    display: block;
+}
+
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS之Tab选项卡</title>
+    <!--引入外部css样式-->
+
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/AccordionStyle.css" type="text/css">
+
+    <!--引入外部js文件-->
+    <script type="text/javascript" src="js/tabdemo.js"></script>
+
+    <script>
+        window.onload = function () {
+            //填写js逻辑
+            //获取ul里li的个数
+            var tab_li = document.getElementsByTagName("li");
+            //获取要显示的div的个数
+            var content = document.getElementById("content");
+            var content_div = content.getElementsByTagName("div");
+
+            //给li添加鼠标点击事件
+            for(var i= 0;i<tab_li.length;i++){
+
+                    // tab_li[i].index = i;
+                    // alert("新设置的i:"+i);
+                tab_li[i].onmouseover = function () {
+                   alert("未设置的i："+i);  //为何i的取值为3
+
+                    for(var j=0;j<tab_li.length;j++){
+                          alert("鼠标点击事件里的j"+j);
+                        tab_li[j].classList.remove("active");  //tab_li[j].className="";
+                        content_div[j].setAttribute("class","hidden");
+                    }
+                    //设置自己本身的样式:添加class=active
+                    this.setAttribute("class","active");  //this.className
+                    content_div[i].classList.remove("hidden");
+                 //将对应的内容显示出来
+                 //    content_div[this.index].classList.remove("hidden");
+
+
+
+
+
+
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+<!--竖向导航-->
+
+<div id="wrap">
+    <ul class="accordion">
+        <li class="active">
+            <a class="tag" href="#">北京景点</a>
+            <div class="text show">
+                <h2>故宫</h2>
+                <h2>十三陵</h2>
+                <h2>圆明园</h2>
+            </div>
+        </li>
+
+        <li>
+            <a class="tag" href="#">南京景点</a>
+            <div class="text">
+                <h2>栖霞寺</h2>
+                <h2>夫子庙</h2>
+                <h2>中山路</h2>
+                   <h2>乌衣巷</h2>
+            </div>
+        </li>
+
+        <li>
+            <a class="tag" href="#">上海景点</a>
+            <div class="text">
+                <h2>东方明珠</h2>
+                <h2>外滩</h2>
+                <h2>田子坊</h2>
+            </div>
+        </li>
+
+
+        <li>
+            <a class="tag" href="#">广州景点</a>
+            <div class="text">
+                <h2>白云山</h2>
+                <h2>长隆</h2>
+                <h2>中山纪念堂</h2>
+                 <h2>长隆</h2>
+                <h2>中山纪念堂</h2>
+                <h2>黄花岗</h2>
+                <h2>南沙湿地公园</h2>
+
+            </div>
+        </li>
+
+    </ul>
+
+    <!--弹出内容-->
+
+
+</div>
+
+</body>
+</html>
