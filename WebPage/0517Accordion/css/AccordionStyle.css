@@ -20,6 +20,13 @@ ul li a{
     border-bottom: 1px solid #fff;
 
 }
+
+ul li.active a{
+    background-color: cadetblue;
+}
+
+
+
 li .tag{
     display: inline-block;
     font-size: 15px;
@@ -35,7 +42,8 @@ li .text{
     display: none;
     }
 
-li.active .text{
+li>.show{
+
     display: block;
 }
 
