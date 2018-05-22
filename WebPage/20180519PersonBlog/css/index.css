@@ -93,7 +93,151 @@ li:hover{
     background: #f60;
 }
 
+/*右侧部分：关注我*/
+/*实现类似进度条效果*/
+.attention_me{
+    width: 35%;
+    margin-bottom: 20px;
+}
+.attention_me>h3{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+}
+.attention_me>h3:after{
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #5696ff;
+    position: absolute;
+    top:100%;
+    left:0%;
+    transition: all .8s;
+}
+.attention_me>h3:hover:after{
+    width: 100%;
+}
+
+
+/*关注logo排列*/
+.infortion_logo{
+    margin-top: 20px;
+}
+
+.infortion_logo ul li{
+    float: left;
+}
+.infortion_logo ul li>a{
+    display: inline-block;
+    width: 60px;
+    height: 50px;
+    margin:0  18px;
+    text-align: center;
+    padding-top: 63px;
+}
+
+/*给li>a 加背景图标*/
+a.weibo{
+    background: url(../images/ico_05_1.jpg) no-repeat scroll 0% 0% transparent;
+}
+a.weixin{
+    background: url(../images/ico_04_1.jpg) no-repeat scroll 0% 0% transparent;
+}
+a.email{
+    background: url(../images/ico_07_1.jpg) no-repeat scroll 0% 0% transparent;
+}
+a.qq{
+       background: url(../images/ico_06_1.jpg) no-repeat scroll 0% 0% transparent;
+}
+.attention_logo img{
+    width: 100%;
+    height: 105px;
+}
+
+
+/*文章推荐部分*/
+/*靠左外边框*/
+.article_recommended>.article_left{
+    width: 670px;
+}
+
+/*右边框*/
+.article_recommended>.article_right{
+      width: 35%;
+    height: 500px;
+    border: 1px solid #333333;
+}
+
+/*文章推荐：字体大小，下边框*/
+.article_title>h2{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+   border-bottom: #db6d4c 4px solid
+}
+
+/*单个文章列表*/
+.article_lists>.item{
+    padding: 25px 0;
+    border-bottom: 1px solid #999999;
+
+}
 
 
 
+/*鼠标移动图片，会放大，离开就还原*/
+.item .img_left img{
+    width: 168px;
+    height: 136px;
+
+}
+
+/*单个文章列表右侧：
+标题,内容*/
+.item .article_text{
+
+    width: 72%;
+}
+.item .article_text h3>a{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: #474645
+}
+.article_text>p{
+    font-size: 12px;
+    line-height: 20px;
+    color: #CECECE;
+}
+
+/*个人博客，日期，浏览量，评论数的logo*/
+.little_tag{
+    padding: 15px 0 10px 0 ;
+}
+.little_tag .person_blog{
+    background: url(../images/newsbg01.png) no-repeat left center;
+    padding-left: 20px;
+}
+
+.little_tag .dtime{
+    background: url(../images/newsbg02.png) no-repeat left center;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.little_tag .comments_num{
+    background: url(../images/newsbg03.png) no-repeat left center;
+    padding-left: 20px;
+    margin-left: 190px;
+}
+
+.little_tag .views{
+    background: url(../images/newsbg04.png) no-repeat left center;
+    padding-left: 20px;
+    margin-left: 10px;
+}
 
