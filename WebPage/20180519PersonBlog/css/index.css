@@ -189,11 +189,21 @@ a.qq{
 
 
 /*鼠标移动图片，会放大，离开就还原*/
-.item .img_left img{
+.item .img_left {
     width: 168px;
     height: 136px;
 
+
+                overflow: hidden;
+
 }
+.item .img_left>img{
+                cursor: pointer;
+                transition: all 0.8s;
+            }
+.item .img_left>img:hover{
+                transform: scale(1.2);
+            }
 
 /*单个文章列表右侧：
 标题,内容*/
