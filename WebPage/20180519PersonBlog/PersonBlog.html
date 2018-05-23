@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/base.css" type="text/css">
     <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/shutter.css" type="text/css">
 
     <!--js-->
 
@@ -71,22 +72,55 @@
         <!--轮播图与右侧关注我-->
         <div class="banner clear-float">
             <!--左侧轮播图-->
-            <div class="slide_holder fl">
-                <div class="slide_runner">
-                    <a href="#"><img id="img_1" src="images/a1.jpg"></a>
-                    <a href="#"><img id="img_2" src="images/a2.jpg"></a>
-                    <a href="#"><img id="img_3" src="images/a4.jpg"></a>
+            <div class="shutter fl">
+                <div class="shutter-img">
+                  <a href="#" data-shutter-title="scrapy 爬取网易云音乐"><img src="images/a1.jpg" alt="#"></a>
+                  <a href="#" data-shutter-title="如何让div居中显示"><img src="images/a2.jpg" alt="#"></a>
+                  <a href="#" data-shutter-title="如何解决redis缓存问题"><img src="images/a3.jpg" alt="#"></a>
+                   <a href="#" data-shutter-title="个人博客搭建"><img src="images/a4.jpg" alt="#"></a>
                 </div>
-                <div class="slide_controls clear-float">
-                    <p class="title fl"><strong><span>标题1</span></strong></p>
-                    <h3 class="desc fl">内容的描述这里添加</h3>
-                    <div class="round_button fr">
-                        <span class="on">1</span>
-                        <span>2</span>
-                        <span>3</span>
-                    </div>
+                <ul class="shutter-btn">
+                  <li class="prev"></li>
+                  <li class="next"></li>
+                </ul>
+                <div class="shutter-desc">
+                <p>scrapy 爬取网易云音乐</p>
                 </div>
-            </div>
+        </div>
+
+                <script src="js/jquery.min.js"></script>
+                <script src="js/velocity.js"></script>
+                <script src="js/shutter.js"></script>
+                <script>
+                $(function () {
+                  $('.shutter').shutter({
+                    shutterW: 670, // 容器宽度
+                    shutterH: 280, // 容器高度
+                    isAutoPlay: true, // 是否自动播放
+                    playInterval: 3000, // 自动播放时间
+                    curDisplay: 3, // 当前显示页
+                    fullPage: false // 是否全屏展示
+                  });
+                });
+                </script>
+
+
+            <!--<div class="slide_holder fl">-->
+                <!--<div class="slide_runner">-->
+                    <!--<a href="#"><img id="img_1" src="images/a1.jpg"></a>-->
+                    <!--<a href="#"><img id="img_2" src="images/a2.jpg"></a>-->
+                    <!--<a href="#"><img id="img_3" src="images/a4.jpg"></a>-->
+                <!--</div>-->
+                <!--<div class="slide_controls clear-float">-->
+                    <!--<p class="title fl"><strong><span>标题1</span></strong></p>-->
+                    <!--<h3 class="desc fl">内容的描述这里添加</h3>-->
+                    <!--<div class="round_button fr">-->
+                        <!--<span class="on">1</span>-->
+                        <!--<span>2</span>-->
+                        <!--<span>3</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             <!--右侧关注我-->
             <div class="attention_me fr">
                 <h3>关注我</h3>
@@ -186,27 +220,27 @@
             <div class="article_right fr">
                 <!--点击排行-->
                 <div class="click_list">
-                    <ul class="click_title">
+                    <ul class="click_title clear-float">
                         <li class="cur"><a href="#">点击排行</a></li>
                         <li ><a href="#">最新文章</a></li>
                         <li ><a href="#">博主推荐</a></li>
                     </ul>
                     <div class="click_main">
-                        <div class="click_text">
-                            <ul>
+                        <div class="item_text show">
+                            <ul >
                                 <li><a href="#">点击排行</a></li>
                                 <li><a href="#">教你如何用欠费手机打电话</a></li>
                                 <li><a href="#">你面对的是生活不是手机</a></li>
                             </ul>
                         </div>
-                        <div class="news_text">
+                        <div class="item_text">
                             <ul>
                                 <li><a href="#">最新文章</a></li>
                                 <li><a href="#">教你如何用欠费手机打电话</a></li>
                                 <li><a href="#">你面对的是生活不是手机</a></li>
                             </ul>
                         </div>
-                        <div class="recommend_text">
+                        <div class="item_text">
                             <ul>
                                 <li><a href="#">站长推荐</a></li>
                                 <li><a href="#">教你如何用欠费手机打电话</a></li>
@@ -217,9 +251,32 @@
                 </div>
                 <!--标签云-->
                 <div class="tag_cloud">
+                    <h3>标签云</h3>
+                    <!--标签列表-->
+                    <ul>
+                        <li><a href="#">个人博客 </a></li>
+                         <li><a href="#">web开发 </a></li>
+                         <li><a href="#">前端设计 </a></li>
+                         <li><a href="#">HTML </a></li>
+                         <li><a href="#">css </a></li>
+                         <li><a href="#">javascript </a></li>
+                         <li><a href="#">python </a></li>
+                         <li><a href="#">数据采集 </a></li>
+                         <li><a href="#">生活 </a></li>
+                    </ul>
                 </div>
                 <!--友情链接-->
                 <div class="friend_link">
+                    <h3>友情链接</h3>
+                    <ul class="clear-float">
+                        <li><a href="/">蜗牛曹个人博客</a></li>
+                        <li><a href="/">web开发</a></li>
+                        <li><a href="/">前端设计</a></li>
+                        <li><a href="/">Html</a></li>
+                        <li><a href="/">CSS3</a></li>
+                        <li><a href="/">Html5+css3</a></li>
+                        <li><a href="/">百度</a></li>
+                    </ul>
                 </div>
 
             </div>
@@ -229,6 +286,10 @@
 </div>
     <!--文章页脚部分-->
     <div class="footer">
+        <p>蜗牛曹的个人博客 Design By CxueweiSmile</p>
+        <!--回到顶部-->
+        <div class="get_top">
+        </div>
     </div>
 
 </body>
