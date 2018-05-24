@@ -10,73 +10,52 @@
 
     <!--引入外部js文件-->
     <script type="text/javascript" src="js/tabdemo.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
 
     <script>
+/*原生js*/
         // window.onload = function () {
-        //     //填写js逻辑
-        //     //获取ul里li的个数
-        //     var tab_li = document.getElementsByTagName("li");
-        //     //获取要显示的div的个数
-        //     var content = document.getElementById("content");
-        //     var content_div = content.getElementsByTagName("div");
+        //     //获取li标签
+        //     var liLen = document.getElementsByTagName("li");
+        //     //获取class=active标签
+        //     var text = document.getElementsByClassName("text");
         //
-        //     //给li添加鼠标点击事件
-        //     for(var i= 0;i<tab_li.length;i++){
-        //
-        //             // tab_li[i].index = i;
-        //             // alert("新设置的i:"+i);
-        //         tab_li[i].onmouseover = function () {
-        //            alert("未设置的i："+i);  //为何i的取值为3
-        //
-        //             for(var j=0;j<tab_li.length;j++){
-        //                   alert("鼠标点击事件里的j"+j);
-        //                 tab_li[j].classList.remove("active");  //tab_li[j].className="";
-        //                 content_div[j].setAttribute("class","hidden");
+        //     //绑定点击事件
+        //     for(let i=0;i<liLen.length;i++){
+        //         liLen[i].onclick = function () {
+        //             var classname = this.getAttribute("class");
+        //          //判断是否处于点击状态，是就收缩回原始状态
+        //             if( classname =="active"){
+        //                 this.className="";
+        //                 text[i].className="text";
+        //                 //背景颜色恢复到点击状态之前;
         //             }
-        //             //设置自己本身的样式:添加class=active
-        //             this.setAttribute("class","active");  //this.className
-        //             content_div[i].classList.remove("hidden");
-        //          //将对应的内容显示出来
-        //          //    content_div[this.index].classList.remove("hidden");
-        //
-        //
-        //
+        //             else {
+        //                 for (var j = 0; j < liLen.length; j++) {
+        //                     liLen[j].classList.remove("active");
+        //                     text[j].className = "text";
+        //                 }
+        //                 this.className = "active";
+        //                 text[i].className = "text show";
+        //             }
         //
         //
         //
         //         }
         //     }
-        //
         // }
-        window.onload = function () {
-            //获取li标签
-            var liLen = document.getElementsByTagName("li");
-            //获取class=active标签
-            var text = document.getElementsByClassName("text");
 
-            //绑定点击事件
-            for(let i=0;i<liLen.length;i++){
-                liLen[i].onclick = function () {
-                    var classname = this.getAttribute("class");
-                 //判断是否处于点击状态，是就收缩回原始状态
-                    if( classname =="active"){
-                        text[i].className="text";
-                        //背景颜色恢复到点击状态之前；
+/*jquery解决点击显示生硬的问题*/
+        $(document).ready(function () {
+            //遍历li标签，绑定点击事件
+            $("li").bind("click",function () {
+                $(this).siblings("li").removeClass("active");
+                $(".text").slideUp(500).css("display","none");
+                $(this).addClass("active");
+                  $(this).find(".text").css("display","block");
 
-                    }
-                    else{
-                        for(var j=0;j<liLen.length;j++){
-                            liLen[j].classList.remove("active");
-                            text[j].className = "text";
-                        }
-                            this.className="active";
-                            text[i].className="text show";
-                    }
-
-
-                }
-            }
-        }
+            })
+        })
     </script>
 </head>
 <body>
@@ -85,9 +64,9 @@
 
 <div id="wrap">
     <ul class="accordion">
-        <li class="active">
+        <li class="">
             <a class="tag" href="#">北京景点</a>
-            <div class="text show">
+            <div class="text">
                 <h2>故宫</h2>
                 <h2>十三陵</h2>
                 <h2>圆明园</h2>
