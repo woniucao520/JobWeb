@@ -49,11 +49,24 @@
         $(document).ready(function () {
             //遍历li标签，绑定点击事件
             $("li").bind("click",function () {
-                $(this).siblings("li").removeClass("active");
-                $(".text").slideUp(500).css("display","none");
-                $(this).addClass("active");
-                  $(this).find(".text").css("display","block");
 
+                //如果此刻处于点击状态
+                if($(this).hasClass("active")){
+                    //改变当前的状态
+                    $(this).removeClass("active");
+                    $(this).find(".text").slideUp(500);//设置slideup：默认设置display：none；元素被隐藏
+
+                }else{
+                    //清空之前的状态
+
+                    $(this).siblings("li").removeClass("active");
+                    $(".text").slideUp(500);
+
+                     $(this).addClass("active");
+                     $(this).find(".text").slideDown(500);//相当于display:block;
+
+
+                }
             })
         })
     </script>
