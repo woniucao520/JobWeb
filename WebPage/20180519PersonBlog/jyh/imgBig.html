@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滑过，图片变大</title>
+</head>
+<!--外联样式-->
+<style>
+    *{margin: 0;padding: 0}
+    body { background:#f0f0f0; height:800px; font-family:Arial;}
+    ul{list-style: none ; width: 800px; margin: 0  auto; border: 1px solid #000000}
+    ul.gallery{overflow: hidden}
+    ul.gallery li{float: left;margin: 10px;}
+    /*小图*/
+    ul.gallery li a>img{width: 200px; height:200px}
+    /*大图*/
+    .bigimage{ position: absolute; display: none;}
+     .bigimage>img{ width: 450px ; height: 450px;padding: 5px; border: 1px solid #8c8d8d}
+</style>
+
+
+<!--引入本地js-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<body>
+
+
+<ul class="gallery">
+    <li><a class="smallimg" href="#" rel="../imageBig/more_bar.png">
+        <img src="../imageBig/more_bar.png"></a>
+    </li>
+
+    <li><a class="smallimg" href="#" rel="../imageBig/reverse_single_bar.png">
+        <img src="../imageBig/reverse_single_bar.png"></a>
+    </li>
+
+    <li><a class="smallimg" href="#" rel="../imageBig/single_bar.png">
+        <img src="../imageBig/single_bar.png"></a>
+    </li>
+
+</ul>
+
+<!-js操作->
+<script>
+    //声明两个变量，存大图距离鼠标点击的位置
+    var x = 22;
+    var y = 20;
+    $("a.smallimg").hover(function (e) {  //绑定鼠标滑过时间
+
+        //新建一个p元素，存放大图片，存在body里
+        var bigimg = "<p class='bigimage'><img src="+ this.rel + "></p>";
+        $("body").append(bigimg);
+
+        //鼠标点击：小图片背景色变暗
+        $(this).find("img").stop().fadeTo("slow",0.5);
+
+        //计算大图片的位置，并显示
+        //知识点：pageX:鼠标点击在页面的横坐标；pageY：
+        $(".bigimage").css(
+            {
+                top:(e.pageY-y)+"px",
+                left:(e.pageX+x)+"px"
+            }
+        ).fadeIn("fast");
+    },function () {
+        $(this).find("img").stop().fadeTo("fast",1);
+        
+        //移除新增的p标签
+        $(".bigimage").remove();
+        
+    });
+
+    
+    //鼠标移出事件;
+    $(".smallimg").mouseover(function (e) {
+         $("#bigimage").css({top:(e.pageY - y ) + 'px',left:(e.pageX + x ) + 'px'});
+    });
+</script>
+
+
+</body>
+</html>

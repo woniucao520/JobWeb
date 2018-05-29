@@ -15,6 +15,7 @@
 </head>
 <body>
 
+<div class="container">
 <!--头部：logo与导航栏-->
 <div class="toplogo">
      <div class="middle_box clear-float">
@@ -105,22 +106,7 @@
                 </script>
 
 
-            <!--<div class="slide_holder fl">-->
-                <!--<div class="slide_runner">-->
-                    <!--<a href="#"><img id="img_1" src="images/a1.jpg"></a>-->
-                    <!--<a href="#"><img id="img_2" src="images/a2.jpg"></a>-->
-                    <!--<a href="#"><img id="img_3" src="images/a4.jpg"></a>-->
-                <!--</div>-->
-                <!--<div class="slide_controls clear-float">-->
-                    <!--<p class="title fl"><strong><span>标题1</span></strong></p>-->
-                    <!--<h3 class="desc fl">内容的描述这里添加</h3>-->
-                    <!--<div class="round_button fr">-->
-                        <!--<span class="on">1</span>-->
-                        <!--<span>2</span>-->
-                        <!--<span>3</span>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+
             <!--右侧关注我-->
             <div class="attention_me fr">
                 <h3>关注我</h3>
@@ -285,12 +271,42 @@
     </div>
 </div>
     <!--文章页脚部分-->
-    <div class="footer">
+<div class="footer">
         <p>蜗牛曹的个人博客 Design By CxueweiSmile</p>
         <!--回到顶部-->
         <div class="get_top">
         </div>
     </div>
 
+<!--回到顶部-->
+ <div class="goToTop"><a href="javascript:;">返回顶部</a></div>
+
+</div>
+    <script>
+    // 改进版
+    $(function(){
+
+        $('.goToTop').hide();        //隐藏go to top按钮
+
+        $(window).scroll(function(){
+            // console.log($(this).scrollTop());
+
+            //当window的scrolltop距离大于1时，go to
+            if($(this).scrollTop() > 100){
+                $('.goToTop').fadeIn();
+            }else{
+                $('.goToTop').fadeOut();
+            }
+        });
+
+        $('.goToTop a').click(function(){
+            $('html ,body').animate({scrollTop: 0}, 300);
+            return false;
+        });
+
+
+
+    });
+    </script>
 </body>
 </html>

@@ -21,7 +21,7 @@
   height: 100%;
 }
 .shutter-img a {
-  cursor: default;
+  cursor: pointer;
 }
 .shutter-img a > img {
   width: 100%;

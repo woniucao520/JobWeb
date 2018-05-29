@@ -1,3 +1,8 @@
+.container{
+    height: auto;
+    position: relative;
+}
+
 .middle_box{
     width: 1100px;
     margin: 0 auto;
@@ -343,3 +348,6 @@ ul.click_title>li.cur a{
     font-size: 12px;
 }
 
+/*回到顶部按钮*/
+.goToTop { position: fixed; bottom: 20px; right: 10%; }
+.goToTop a { background: none repeat scroll 0 0 #336699; border: 1px solid #CCCCCC; border-radius: 3px; -webkit-border-radius: 3px; color: #ff0; font-size: 14px; padding: 5px; text-decoration: none; text-shadow: 0 1px 0 #999; -webkit-text-shadow: 0 1px 0 #999; }

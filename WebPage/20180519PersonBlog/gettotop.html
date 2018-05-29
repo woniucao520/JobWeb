@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回顶部</title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <style type="text/css">
+       .container { width:980px; margin:0 auto; height:auto; min-height:100%; position:relative; }
+       .content { height: 2000px; border: 1px solid red; }
+       #goToTop { position: fixed; bottom: 20px; right: 10%; }
+      #goToTop a { background: none repeat scroll 0 0 #336699; border: 1px solid #CCCCCC; border-radius: 3px; -webkit-border-radius: 3px; color: #ff0; font-size: 14px; padding: 5px; text-decoration: none; text-shadow: 0 1px 0 #999; -webkit-text-shadow: 0 1px 0 #999; }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"> 我是头部</div>
+        <div class="content">我是主内容，高度是2000px</div>
+        <div class="footer">我是在最底部</div>
+        <div id="goToTop"><a href="javascript:;">点我返回顶部</a></div>
+    </div>
+    <script>
+    // 改进版
+    $(function(){
+
+        $('#goToTop').hide();        //隐藏go to top按钮
+
+        $(window).scroll(function(){
+            // console.log($(this).scrollTop());
+
+            //当window的scrolltop距离大于1时，go to
+            if($(this).scrollTop() > 100){
+                $('#goToTop').fadeIn();
+            }else{
+                $('#goToTop').fadeOut();
+            }
+        });
+
+        $('#goToTop a').click(function(){
+            $('html ,body').animate({scrollTop: 0}, 300);
+            return false;
+        });
+
+
+
+    });
+    </script>
+</body>
+</html>
