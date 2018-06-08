@@ -15,15 +15,34 @@ window.onload=function () {
 
         var getReduce = document.getElementsByClassName("reduce");
         for(var i =0 ; i<getAdd.length; i++){
+            getNum(i);
 
-            getAdd[i].onclick = function () {
-
-              var num = getAdd[i].previousElementSibling;
-
-              alert(num);
-              //
             }
+
+        function getNum(i) {
+            getAdd[i].onclick = function () {
+               var num = getAdd[i].previousElementSibling.value;
+
+               num++;
+               getAdd[i].previousElementSibling.value = num;
+
+            }
+
+            getReduce[i].onclick = function () {
+
+                 var num = getReduce[i].nextElementSibling.value;
+                 num--;
+                 getReduce[i].nextElementSibling.value = num;
+
+
+
+            }
+
+
+
         }
+
+
 
 
 
