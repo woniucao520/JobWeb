@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+
+    <!--引入外部css样式-->
+    <link  rel="stylesheet"  type="text/css" href="css/ShopCard.css">
+
+    <!--引入外部的js-->
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+<!--表格-->
+    <!--商品列表-->
+    <table id="cartTable">
+        <thead>
+        <tr>
+            <th><input type="checkbox">全选</th>
+            <th>商品</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>小计</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+
+    <tbody>
+        <tr>
+        <td class="checkbox">
+            <input class="check-one check" type="checkbox">
+        </td>
+        <!--商品图片与简介-->
+        <td class="goods">
+            <img src="images/1.jpg" alt="">
+            <span> Casio/卡西欧EX-TR350</span>
+        </td>
+        <!--单价-->
+        <td class="price">
+            3000.52$
+        </td>
+        <!--数量增多减少-->
+        <td class="count">
+            <span class="reduce">-</span>
+            <input class="count_input" type="text" value="1">
+            <span class="add">+</span>
+        </td>
+        <!--总价格-->
+        <td class="subtotal">5999.99
+        </td>
+        <!--删除操作-->
+        <td class="operation">
+            <span class="delete">删除</span>
+        </td>
+
+        </tr>
+        <tr>
+        <td class="checkbox">
+            <input class="check-one check" type="checkbox">
+        </td>
+        <!--商品图片与简介-->
+        <td class="goods">
+            <img src="images/1.jpg" alt="">
+            <span> Casio/卡西欧EX-TR350</span>
+        </td>
+        <!--单价-->
+        <td class="price">
+            5299.99$
+        </td>
+        <!--数量增多减少-->
+        <td class="count">
+            <span class="reduce">-</span>
+            <input class="count_input" type="text" value="1">
+            <span class="add">+</span>
+        </td>
+        <!--总价格-->
+        <td class="subtotal">5999.99
+        </td>
+        <!--删除操作-->
+        <td class="operation">
+            <span class="delete">删除</span>
+        </td>
+
+        </tr>
+        <tr>
+        <td class="checkbox">
+            <input class="check-one check" type="checkbox">
+        </td>
+        <!--商品图片与简介-->
+        <td class="goods">
+            <img src="images/1.jpg" alt="">
+            <span> Casio/卡西欧EX-TR350</span>
+        </td>
+        <!--单价-->
+        <td class="price">
+            5299.99$
+        </td>
+        <!--数量增多减少-->
+        <td class="count">
+            <span class="reduce">-</span>
+            <input class="count_input" type="text" value="1">
+            <span class="add">+</span>
+        </td>
+        <!--总价格-->
+        <td class="subtotal">5999.99
+        </td>
+        <!--删除操作-->
+        <td class="operation">
+            <span class="delete">删除</span>
+        </td>
+
+        </tr>
+        <tr>
+        <td class="checkbox">
+            <input class="check-one check" type="checkbox">
+        </td>
+        <!--商品图片与简介-->
+        <td class="goods">
+            <img src="images/1.jpg" alt="">
+            <span> Casio/卡西欧EX-TR350</span>
+        </td>
+        <!--单价-->
+        <td class="price">
+            5299.99$
+        </td>
+        <!--数量增多减少-->
+        <td class="count">
+            <span class="reduce">-</span>
+            <input class="count_input" type="text" value="1">
+            <span class="add">+</span>
+        </td>
+        <!--总价格-->
+        <td class="subtotal">5999.99
+        </td>
+        <!--删除操作-->
+        <td class="operation">
+            <span class="delete">删除</span>
+        </td>
+
+        </tr>
+        <tr>
+        <td class="checkbox">
+            <input class="check-one check" type="checkbox">
+        </td>
+        <!--商品图片与简介-->
+        <td class="goods">
+            <img src="images/1.jpg" alt="">
+            <span> Casio/卡西欧EX-TR350</span>
+        </td>
+        <!--单价-->
+        <td class="price">
+            5299.99$
+        </td>
+        <!--数量增多减少-->
+        <td class="count">
+            <span class="reduce">-</span>
+            <input class="count_input" type="text" value="1">
+            <span class="add">+</span>
+        </td>
+        <!--总价格-->
+        <td class="subtotal">5999.99
+        </td>
+        <!--删除操作-->
+        <td class="operation">
+            <span class="delete">删除</span>
+        </td>
+
+        </tr>
+    </tbody>
+    </table>
+
+    <div class="foot" id="foot">
+        <!--全选-->
+        <label class="fl select_all">
+            <input type="checkbox" class="check_all check">
+            全选
+        </label>
+
+        <!--删除-->
+        <a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
+
+
+        <!--结算-->
+        <div class="settle_accounts fr">
+            去结算
+        </div>
+        <!--合计-->
+        <div class="fr total">
+            合计：¥
+            <span id="totalnum">0.00</span>
+        </div>
+
+         <!--已经选择的商品-->
+        <div class="selected fr" id="selected">
+            已选商品
+            <span id="selectedTotal">0</span>
+            件
+        </div>
+    </div>
+
+</body>
+</html>

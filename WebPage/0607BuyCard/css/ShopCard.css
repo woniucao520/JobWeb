@@ -1,0 +1,132 @@
+
+/*table*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.fr{
+    float: right;
+}
+
+.fl{
+    float: left;
+}
+table{
+    border-collapse: collapse;
+    border: 0;
+    border-spacing:0;
+    text-align: center;
+
+}
+
+/*表头*/
+tbody,
+thead{
+    vertical-align: middle;
+    border-color:inherit ;
+}
+
+th{
+    background: #e2f2ff;
+    border-top:3px solid  #a7cbff ;
+    height: 30px;
+
+}
+
+/*表头，表格的边框线*/
+th,td{
+    border: 1px solid #CADEFF;
+}
+
+td{
+    padding: 20px;
+
+}
+
+/*checkbox*/
+.checkbox{
+    width: 60px;
+}
+
+/*商品图片大小*/
+img{
+    width: 100px;
+    height: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+/*图片简介*/
+.goods span{
+    display: inline-block;
+    width: 180px;
+    height: 80px;
+    line-height: 80px;
+}
+
+/*数量样式*/
+.count{
+    width: 90px;
+}
+
+.count .add,
+.count .reduce{
+    width: 17px;
+    height: 23px;
+    border: 1px solid #e5e5e5;
+    background: #f0f0f0;
+    text-align: center;
+    line-height: 23px;
+    color: #444444;
+}
+.count input{
+    width: 45px;
+    text-align: center;
+}
+
+/*商品总价*/
+.subtotal{
+    color: orangered;
+}
+
+/*页脚结算*/
+.foot{
+    width: 848px;
+    margin-top: 20px;
+    color: #666;
+    height: 45px;
+    line-height: 45px;
+    background-color: #eaeaea;
+    border: 1px solid #c8c8c8;
+}
+
+/*全选*/
+.foot .select_all{
+    width: 100px;
+    height: 45px;
+    padding: 0 10px;
+}
+
+/*已选的商品数量*/
+/*去结算*/
+.foot .settle_accounts,
+.foot .selected{
+    cursor: pointer;
+}
+.foot .selected span{
+    color: red;
+}
+/*总价*/
+.total span{
+    font-weight: bold;
+    color: red;
+}
+.total{
+    margin: 0 20px;
+}
+
+/*去结算*/
+.foot .settle_accounts{
+    margin: 0 15px;
+}
