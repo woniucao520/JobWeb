@@ -1,4 +1,4 @@
- window.onload=function () {
+window.onload=function () {
 
     function changeNum()
     {
@@ -122,51 +122,24 @@
 
     CheckAll.onclick = function(){
         var totalSum = 0;
+        for(var i = 0;i<checkbox.length; i++){
 
 
 
-        for(var i = 0 ;i<checkbox.length; i++){
+
 
             if(CheckAll.checked == true){
-
                  checkbox[i].firstElementChild.checked = true;
                  document.getElementById("selectedTotal").innerHTML = checkbox.length;
                 totalSum = totalSum + parseFloat(checkbox[i].parentNode.children[4].innerHTML);
                  //合计商品总额
                     document.getElementById("totalnum").innerHTML = totalSum.toFixed(2);
 
-
-                //     //在全选的情况下，点击取消了某一个选项
-                // function ss(num,b) {
-                //     var realtest = document.getElementById("selectedTotal").innerHTML;
-                //     checkbox[num].addEventListener('click',function () {
-                //        //判断是否处于选中状态
-                //             b=5;
-                //         console.log("为啥这个是5：：：：："+realtest);
-                //             alert("realtest是"+realtest);
-                //             alert("checkbox[num].firstElementChild.checked:::::::"+checkbox[num].firstElementChild.checked);
-                //         if(checkbox[num].firstElementChild.checked == false){
-                //
-                //
-                //             document.getElementById("selectedTotal").innerHTML = b -1;
-                //              console.log("局部变量里的b是******"+b);
-                //         }
-                //         else if(checkbox[num].firstElementChild.checked == true){
-                //              console.log("局部变量里的b22222是******"+b);
-                //            document.getElementById("selectedTotal").innerHTML = b+1;
-                //         }
-                //     },false)
-                //
-                // }
-                // ss(i,b);
-
-
-
             }
             else{
-                checkbox[i].firstElementChild.checked = false;
-                document.getElementById("selectedTotal").innerHTML = 0;
-                document.getElementById("totalnum").innerHTML  = 0;
+                 checkbox[i].firstElementChild.checked = false;
+                   document.getElementById("selectedTotal").innerHTML = 0;
+                    document.getElementById("totalnum").innerHTML  = 0;
 
             }
 
@@ -179,17 +152,15 @@
 
 
 //部分选择商品,并计算
-
+    var isCheck = 0;
     for(var j = 0; j<checkbox.length;j++){
 
         getClickTotal(j);
 
     }
 
-  var isCheck = document.getElementById("selectedTotal").innerHTML;
-      console.log("isCheck的值是~~~~~~~~~"+isCheck);
-    function  getClickTotal(j){
 
+    function  getClickTotal(j){
 
         checkbox[j].onclick = function () {
 
@@ -215,13 +186,16 @@
               else {
 
 
-
+                alert("状态为false时候"+isCheck);
                    isCheck = isCheck - 1
                    document.getElementById("selectedTotal").innerHTML = isCheck;
               }
         };
 
     }
+
+
+
 
 
 
