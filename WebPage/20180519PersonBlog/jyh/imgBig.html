@@ -45,36 +45,35 @@
     //声明两个变量，存大图距离鼠标点击的位置
     var x = 22;
     var y = 20;
-    $("a.smallimg").hover(function (e) {  //绑定鼠标滑过时间
+    $("a.smallimg").mousemove(function (e) {  //绑定鼠标滑过时间
 
 
 
         //新建一个p元素，存放大图片，存在body里
+          $(this).find("img").stop().fadeTo("fast",0.5);
         var bigimg = "<p class='bigimage'><img src="+ this.rel + "></p>";
         $("body").append(bigimg);
-
-        //鼠标点击：小图片背景色变暗
-        $(this).find("img").stop().fadeTo("slow",0.5);
 
         //计算大图片的位置，并显示
         //知识点：pageX:鼠标点击在页面的横坐标；pageY：
         $(".bigimage").css(
             {
-                top:20+"px",
-                left:230+"px"
+                top:(e.pageY -y) + "px",
+                left:(e.pageX+x) + "px"
             }
-        ).fadeIn("fast");
-    },function () {
-        $(this).find("img").stop().fadeTo("fast",1);
-        
-        //移除新增的p标签
-        $(".bigimage").remove();
-        
+        ).fadeIn("fast")
     });
 
-    
+
+        $(".smallimg").mouseout(function (e) {
+            //小图背景恢复
+            $(this).find("img").stop().fadeTo("fast",1);
+            //删除大图片
+            $(".bigimage").remove();
+        });
+
     //鼠标移出事件;
-    $(".smallimg").mouseover(function (e) {
+    $(".smallimg").mousemove(function (e) {
          $("#bigimage").css({top:(e.pageY - y ) + 'px',left:(e.pageX + x ) + 'px'});
     });
 </script>

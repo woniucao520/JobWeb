@@ -1,0 +1,22 @@
+/*最新文章*/
+
+/*关注我二维码展示*/
+.mecode{
+    margin-top: 15px;
+    width: 385px;
+}
+
+.mecode>h3{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+}
+
+
+.mecode>img{
+    width: 284px;
+    margin: 20px 0;
+    margin-left: 50px;
+}

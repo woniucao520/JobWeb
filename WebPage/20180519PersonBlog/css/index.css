@@ -189,7 +189,7 @@ a.qq{
     line-height: 40px;
     font-size: 16px;
     font-weight: bold;
-   border-bottom: #db6d4c 4px solid
+   border-bottom: #f60 4px solid
 }
 
 /*单个文章列表*/
@@ -338,9 +338,13 @@ ul.click_title>li.cur a{
 
 
 /*页脚部分*/
+.footer{
+    height: 40px;
+
+}
 .footer>p{
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     background: #333333;
     color: white;
     text-align: center;
@@ -350,4 +354,4 @@ ul.click_title>li.cur a{
 
 /*回到顶部按钮*/
 .goToTop { position: fixed; bottom: 20px; right: 10%; }
-.goToTop a { background: none repeat scroll 0 0 #336699; border: 1px solid #CCCCCC; border-radius: 3px; -webkit-border-radius: 3px; color: #ff0; font-size: 14px; padding: 5px; text-decoration: none; text-shadow: 0 1px 0 #999; -webkit-text-shadow: 0 1px 0 #999; }
+.goToTop a { background: none repeat scroll 0 0 #ff6600; border: 1px solid #CCCCCC; border-radius: 3px; -webkit-border-radius: 3px; color: white; font-size: 14px; padding: 5px; text-decoration: none; text-shadow: 0 1px 0 #999; -webkit-text-shadow: 0 1px 0 #999; }

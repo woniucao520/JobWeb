@@ -7,7 +7,7 @@
     <style type="text/css">
        .container { width:980px; margin:0 auto; height:auto; min-height:100%; position:relative; }
        .content { height: 2000px; border: 1px solid red; }
-       #goToTop { position: fixed; bottom: 20px; right: 10%; }
+       #goToTop { position: fixed; bottom: 20px; right: 10%; display: none}
       #goToTop a { background: none repeat scroll 0 0 #336699; border: 1px solid #CCCCCC; border-radius: 3px; -webkit-border-radius: 3px; color: #ff0; font-size: 14px; padding: 5px; text-decoration: none; text-shadow: 0 1px 0 #999; -webkit-text-shadow: 0 1px 0 #999; }
      </style>
 </head>
@@ -22,13 +22,12 @@
     // 改进版
     $(function(){
 
-        $('#goToTop').hide();        //隐藏go to top按钮
+        // $('#goToTop').hide();        //隐藏go to top按钮
 
         $(window).scroll(function(){
-            // console.log($(this).scrollTop());
 
             //当window的scrolltop距离大于1时，go to
-            if($(this).scrollTop() > 100){
+            if($(this).scrollTop() > 200){
                 $('#goToTop').fadeIn();
             }else{
                 $('#goToTop').fadeOut();
