@@ -2,7 +2,7 @@
 
 /*关注我二维码展示*/
 .mecode{
-    margin-top: 15px;
+
     width: 385px;
 }
 
@@ -19,4 +19,14 @@
     width: 284px;
     margin: 20px 0;
     margin-left: 50px;
+}
+
+/*友情链接*/
+.friend_link{
+    margin-top: 10px;
+}
+
+/*阅读更多*/
+.readmore{
+    float: right;
 }

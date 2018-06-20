@@ -105,6 +105,7 @@ li:hover{
     margin-bottom: 30px;
 }
 
+.mecode>h3,
 .friend_link>h3,
 .tag_cloud>h3,
 .attention_me>h3{
@@ -115,6 +116,7 @@ li:hover{
     position: relative;
 }
 
+.mecode>h3:after,
 .friend_link>h3:after,
 .tag_cloud>h3:after,
 .attention_me>h3:after{
@@ -127,6 +129,9 @@ li:hover{
     left:0%;
     transition: all .8s;
 }
+
+
+.mecode>h3:hover:after,
 .friend_link>h3:hover:after,
 .tag_cloud>h3:hover:after,
 .attention_me>h3:hover:after{
@@ -179,7 +184,7 @@ a.qq{
 /*右边框*/
 .article_recommended>.article_right{
       width: 35%;
-    height: 500px;
+
 
 }
 
