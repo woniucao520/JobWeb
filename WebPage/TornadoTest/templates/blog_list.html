@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% raw title %}</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css">
+    <script src="https://cdn.bootcss.com/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" align="center">
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="dashboardlist"
+                   class="table text-nowrap table-hover table-bordered table-condensed table-striped">
+
+                <tr class="ths">
+
+                    {% for th in ths %}
+                    <th>{%raw th %}</th>
+
+                    {% end %}
+
+                </tr>
+
+
+                {% for blog in blogs %}
+                    <tr>
+                        {% for th in ths %}
+                            <td>{% raw blog[th] %}</td>
+                        {% end %}
+
+                    </tr>
+
+
+                {% end %}
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

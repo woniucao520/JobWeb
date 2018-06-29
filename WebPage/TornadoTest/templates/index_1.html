@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css">
+    <script src="https://cdn.bootcss.com/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+    <body>
+    <p><span>UserName:</span><input type="text" id="username"/></p>
+        <p><span>Password:</span><input type="password" id="password" /></p>
+        <p><input type="BUTTON" value="登录" id="login" /></p>
+
+<script type="text/javascript">
+    //登录
+        $(document).ready(function () {
+            $('#login').click(function () {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                $.ajax({
+                        type: 'POST',
+                        url: '/user/login',
+                        data: {
+                            username:username,
+                            password: password,
+
+
+                        },
+                        dataType: 'json',
+                        success: function (data) {
+                            var success = data.success;
+                            if (success) {
+                               alert(data.msg)
+                            }
+                            else {
+                                 alert(data.msg);
+
+                            }
+
+                        }
+
+                    }
+                );
+
+
+            })
+
+
+        });
+        </script>
+
+    </body>
+</html>
