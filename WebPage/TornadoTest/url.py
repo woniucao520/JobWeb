@@ -1,14 +1,25 @@
 # coding=utf-8
 
 
-from handlers.index import *
-from handlers.user import UserHandler
+from handlers.bloghandler import IndexHandler
+
 from handlers.handlers import *
-from  handlers.bloglist import *
+
+
+from handlers.bloghandler import *
+
 
 url = [
 
     (r'/user/login',UserLoginHandler),
-    (r'/blog/list',BlogListHandler),
-    (r'/blog/demo',BlogList)
+
+
+    (r'/index',IndexHandler),
+    # (r'/article/list',ArticleListHandler)
+    (r'/blog/detail',DetailHandler)
+
 ]
+
+
+
+

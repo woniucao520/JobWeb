@@ -1,0 +1,42 @@
+
+
+/*当前所在位置*/
+.destination>h2{
+    background: url("../images/lct.png") left center no-repeat;
+    font-size: 14px;
+    line-height: 36px;
+    color: #666666;
+    padding-left: 30px;
+}
+
+/*文章标题*/
+.news_title{
+    font-size: 24px;
+    font-weight: 400;
+    padding: 20px 0 10px 0;
+    color: #38485A;
+}
+
+/*文章作者，发布时间*/
+.news_author{
+    color: #999999;
+    line-height: 18px;
+}
+
+.news_author span{
+    margin-right: 20px;
+    padding-left: 20px;
+}
+.au01{
+    background: url(../images/author2.png) no-repeat left center;
+}
+.autime{
+    background: url(../images/date.png) no-repeat left center;
+}
+
+/*文章的内容*/
+.news_content{
+    background: #f9f9f9;
+
+    margin-top: 10px;
+}

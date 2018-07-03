@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	font-family:'微软雅黑',Arial, Helvetica, sans-serif;
+	}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,pre,form,fieldset,input,textarea,img{
+	margin:0;
+	padding:0;
+	list-style:none;
+	border:0;
+	}
+/*左右浮动*/
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+}
+
+/*清除浮动*/
+
+.clear-float:after,  /*伪类，清除浮动*/
+.clear-float:before{
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+
+a:link {
+ color: #333;
+ text-decoration: none
+}
+a:visited {
+	color: #333;
+ text-decoration: none
+}
+a:hover {
+ color: #f60;
+ text-decoration: none;
+}
+a:active {
+ color: #f60;  
+ text-decoration:none;
+}
+h1,h2,h3,h4,h5{
+	font-size:14px; font-weight:normal;
+	}
+h6{
+	font-size:12px; font-weight:normal;
+	}
+p{
+	font-size:13px;
+	}
+
+
+/*标签云*/
+.tag_cloud { width: 100%; clear: both; overflow: hidden }
+.cloud h3 { line-height: 40px; color: #38485A; font-size: 18px; border-bottom: 1px solid #E6E6E6; height: 40px; }
+.tag_cloud ul { margin: 20px 0 }
+.tag_cloud ul li { line-height: 24px; height: 24px; display: block; background: #999; float: left; padding: 3px 11px; margin: 10px 10px 0 0; border-radius: 8px; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; }
+.tag_cloud ul li a { color: #FFF }
+.tag_cloud ul li:nth-child(8n-7) { background: #8A9B0F }
+.tag_cloud ul li:nth-child(8n-6) { background: #EB6841 }
+.tag_cloud ul li:nth-child(8n-5) { background: #3FB8AF }
+.tag_cloud ul li:nth-child(8n-4) { background: #FE4365 }
+.tag_cloud ul li:nth-child(8n-3) { background: #FC9D9A }
+.tag_cloud ul li:nth-child(8n-2) { background: #EDC951 }
+.tag_cloud ul li:nth-child(8n-1) { background: #C8C8A9 }
+.tag_cloud ul li:nth-child(8n) { background: #83AF9B }
+.tag_cloud ul li:first-child { background: #036564 }
+.tag_cloud ul li:last-child { background: #3299BB }
+.tag_cloud ul li:hover { border-radius: 0; text-shadow: #000 1px 1px 1px }

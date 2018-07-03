@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜗牛曹个人博客--首页</title>
+
+     <!--css-->
+    <link rel="stylesheet"  href="{{static_url('css/base.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{static_url('css/index.css')}}" type="text/css">
+    <link rel="stylesheet"  href="{{static_url('css/bloglists.css')}}" type="text/css">
+    <link rel="stylesheet"  href="{{static_url('css/basic.css')}}" type="text/css">
+
+    <!--js-->
+    <script src="{{static_url('js/jquery.min.js')}}"></script>
+    <script src="{{static_url('js/script.js')}}"></script>
+</head>
+<body>
+
+<!--文章导航部分-->
+<!--与首页样式一样-->
+<div class="container">
+    <!--头部：logo与导航栏-->
+    <div class="toplogo">
+         <div class="middle_box clear-float">
+            <div class="logo fl">
+                <a href="#">
+
+                    <img  src="{{static_url('images/header/lufei.png')}}">
+                    <img  src="{{static_url('images/header/logo1.png')}}">
+                </a>
+            </div>
+            <!--导航栏-->
+            <div class="topnav fr">
+                <ul class="clear-float">
+                    <li >
+                        <a href="#">
+                            首页
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            文章
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            相册
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            心情
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            留言
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           关于我
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--最新文章列表-->
+    <!--文章主体内容-->
+<div class="content">
+    <div class="middle_box">
+        <div class="article_recommended clear-float">
+            <div class="article_left fl">
+                <!--<header>-->
+                    <!--{% block header%}{% end %}-->
+                <!--</header>-->
+
+                <content>
+                    {% block body%}{% end %}
+                </content>
+
+            </div>
+            <div class="article_right fr">
+
+
+                <!--关注我：二维码展示-->
+                <div class="mecode">
+                    <h3>关注与联系</h3>
+                    <img src="{{static_url('images/payme.png')}}">
+
+                </div>
+                <!--点击排行-->
+                <div class="click_list">
+                    <ul class="click_title clear-float">
+                        <li class="cur"><a href="#">点击排行</a></li>
+                        <li ><a href="#">最新文章</a></li>
+                        <li ><a href="#">博主推荐</a></li>
+                    </ul>
+                    <div class="click_main">
+                        <div class="item_text show">
+                            <ul >
+                                <li><a href="#">点击排行</a></li>
+                                <li><a href="#">教你如何用欠费手机打电话</a></li>
+                                <li><a href="#">你面对的是生活不是手机</a></li>
+                            </ul>
+                        </div>
+                        <div class="item_text">
+                            <ul>
+                                <li><a href="#">最新文章</a></li>
+                                <li><a href="#">教你如何用欠费手机打电话</a></li>
+                                <li><a href="#">你面对的是生活不是手机</a></li>
+                            </ul>
+                        </div>
+                        <div class="item_text">
+                            <ul>
+                                <li><a href="#">站长推荐</a></li>
+                                <li><a href="#">教你如何用欠费手机打电话</a></li>
+                                <li><a href="#">你面对的是生活不是手机</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--友情链接-->
+                <div class="friend_link">
+                    <h3>友情链接</h3>
+                    <ul class="clear-float">
+                        <li><a href="/">蜗牛曹个人博客</a></li>
+                        <li><a href="/">web开发</a></li>
+                        <li><a href="/">前端设计</a></li>
+                        <li><a href="/">Html</a></li>
+                        <li><a href="/">CSS3</a></li>
+                        <li><a href="/">Html5+css3</a></li>
+                        <li><a href="/">百度</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix">
+</div>
+
+
+
+
+</div>
+
+    <!--文章页脚部分-->
+<div class="footer">
+        <p>蜗牛曹的个人博客 Design By CxueweiSmile</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "base_index.html" %}
+
+
+
+{% block body %}
+    <div class="article_title">
+        <h2>文章推荐</h2>
+    </div>
+    <div class="article_lists">
+        {% for article in articles %}
+        <div class="item clear-float">
+            <div class="img_left fl">
+                <img  src="{{static_url('images/03.jpg')}}">
+            </div>
+            <div class="article_text fr">
+                <h3><a href="/blog/detail?blog_id={{article['id']}}">{{article.get("title")}}</a></h3>
+                <p><a href="#">{{str(article.get("content"))[:120]}}</a></p>
+                <div class="little_tag">
+                    <span class="person_blog">
+                        <a href="#">{{article.get("blog_type")}}</a>
+                    </span>
+                    <span class="dtime">{{str(article.get("update_time"))[0:10]}}</span>
+                    {% if article.get("comment")%}
+                            <span class="comments_num">({{article.get("comment")}})</span>
+                    {% else %}
+                           <span class="comments_num">(0)</span>
+                    {%end %}
+                    <span class="views">({{article.get("views")}})</span>
+                </div>
+            </div>
+        </div>
+       {% end %}
+
+    </div>
+{% end %}
