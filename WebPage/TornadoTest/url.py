@@ -16,7 +16,8 @@ url = [
 
     (r'/index',IndexHandler),
     # (r'/article/list',ArticleListHandler)
-    (r'/blog/detail',DetailHandler)
+    (r'/blog/detail',DetailHandler),
+    (r'/blog/article',BlogListHandler)
 
 ]
 

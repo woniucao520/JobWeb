@@ -54,3 +54,4 @@ class BlogListHandler(tornado.web.RequestHandler):
         blogs = db._get_list_item(ths=ths, datas=datas)
         print(blogs)
         self.render('blog_list.html',title=title,blogs=blogs,ths=ths)
+

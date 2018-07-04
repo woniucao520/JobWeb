@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>蜗牛曹个人博客--首页</title>
+    <title>蜗牛曹个人博客--详情页</title>
 
      <!--css-->
+        <link rel="stylesheet" href="{{ static_url('css/bootstrap.min.css') }}">
     <link rel="stylesheet"  href="{{static_url('css/base.css')}}" type="text/css">
     <link rel="stylesheet" href="{{static_url('css/index.css')}}" type="text/css">
     <link rel="stylesheet"  href="{{static_url('css/bloglists.css')}}" type="text/css">
     <link rel="stylesheet"  href="{{static_url('css/basic.css')}}" type="text/css">
+    <link rel="stylesheet"  href="{{static_url('css/articledetail.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ static_url('css/pace.css') }}">
+    <link rel="stylesheet" href="{{ static_url('css/custom.css') }}">
+
+    <link rel="stylesheet" href="{{ static_url('css/markdown/github.css')}}" type="text/css">
+
+
 
     <!--js-->
     <script src="{{static_url('js/jquery.min.js')}}"></script>
+       <script src="{{ static_url('js/bootstrap.min.js')}}"></script>
     <script src="{{static_url('js/script.js')}}"></script>
 </head>
 <body>
@@ -23,7 +32,7 @@
     <div class="toplogo">
          <div class="middle_box clear-float">
             <div class="logo fl">
-                <a href="#">
+                <a href="/index">
 
                     <img  src="{{static_url('images/header/lufei.png')}}">
                     <img  src="{{static_url('images/header/logo1.png')}}">
@@ -33,12 +42,12 @@
             <div class="topnav fr">
                 <ul class="clear-float">
                     <li >
-                        <a href="#">
+                        <a href="/index">
                             首页
                         </a>
                     </li>
                     <li class="active">
-                        <a href="#">
+                        <a href="/blog/article">
                             文章
                         </a>
                     </li>
@@ -76,13 +85,15 @@
     <div class="middle_box">
         <div class="article_recommended clear-float">
             <div class="article_left fl">
-                <!--<header>-->
-                    <!--{% block header%}{% end %}-->
-                <!--</header>-->
+
 
                 <content>
                     {% block body%}{% end %}
                 </content>
+
+
+
+
 
             </div>
             <div class="article_right fr">

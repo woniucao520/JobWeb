@@ -5,6 +5,8 @@
 import tornado.web
 from methods.db import BlogDbApi
 import json
+from  markdown import markdown
+
 
 
 
@@ -38,6 +40,27 @@ class IndexHandler(tornado.web.RequestHandler):
         else:
             self.write("there is no this user.")
 
+
+class BlogListHandler(tornado.web.RequestHandler):
+    def get(self):
+        title = '博客列表'
+        query_blogs_sql = 'select * from blog.blog'
+        db = BlogDbApi()
+        datas = db._get_data(query_blogs_sql)
+        description = db._get_description(query_blogs_sql)
+        # 如果description 不为空 for循环 遍历 取索引为0的值(也就是字段名) 为空 则调用 _get_fields_meta 方法 取出该表的元数据 字段
+        ths = [i[0] for i in description] if description else db._get_fields_meta(schema='blog', table_name='blog')
+        print(ths)
+        # 将数据集转换为list
+        articles = db._get_list_item(ths=ths, datas=datas)
+
+        self.render('bloglists.html', title=title, articles=articles, ths=ths)
+
+
+
+
+
+
 class DetailHandler(tornado.web.RequestHandler):
     def get(self):
         blog_id = self.get_argument('blog_id')
@@ -49,4 +72,7 @@ class DetailHandler(tornado.web.RequestHandler):
         print(ths)
         # 将数据集转换为list
         one_blog = db._get_list_item(ths=ths, datas=datas)
-        self.render("test.html",one_blog = one_blog)
+        blog = one_blog[0]
+        blog['content'] = markdown(blog['content'], ['extra', 'codehilite', 'toc',])
+        print('=*****++++++++++++++++++++++',blog['content'])
+        self.render("blogdetail.html", blog =blog )

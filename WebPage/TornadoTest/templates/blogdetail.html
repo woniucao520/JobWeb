@@ -1,0 +1,35 @@
+{% extends "base_detail.html" %}
+
+    {% block body %}
+         <!--当前所在位置-->
+                <div class="destination">
+                    <!--定位小图标-->
+                    <h2>
+                        您现在的位置是：
+                        <a class="portal" href="#">门户</a>
+                        >
+                        <a href="#">文章列表</a>
+                        > 查看内容
+
+                    </h2>
+                </div>
+
+                <!--文章标题-->
+                <div class="news_title">
+                    {{blog['title']}}
+                </div>
+
+                <!--作者，时间-->
+                <div class="news_author">
+                    <span class="au01">{{blog['author']}}</span>
+                    <span class="autime">{{str(blog.get("update_time"))[0:10]}}</span>
+                </div>
+
+                <!--文章内容-->
+                <div class="news_content">
+                    {%  raw blog['content'] %}
+
+
+
+                </div>
+    {% end %}
