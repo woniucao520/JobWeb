@@ -36,6 +36,25 @@
 
 /*文章的内容*/
 .news_content{
-    background: #f9f9f9;
+    /*background: #f9f9f9;*/
     margin-top: 25px;
+    padding: 15px;
+}
+
+/*文章详情排版问题*/
+.news_content>h3{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 5px 0 0 0;
+
+}
+
+.news_content>p,h4,h6{
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.news_content>p>img{
+    margin: 5px 0;
 }

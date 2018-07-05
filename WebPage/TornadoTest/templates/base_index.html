@@ -28,7 +28,7 @@
         </div>
         <!--导航栏-->
         <div class="topnav fr">
-            <ul class="nav clear-float">
+            <ul id="nav" class="nav clear-float">
                 <li class="active">
                     <a href="/index">
                         首页
@@ -245,6 +245,21 @@
             return false;
         });
 
+
+        var li = document.getElementById("nav").getElementsByTagName("li")
+        for(var i=0; i<li.length; i++){
+            getLiNum(i);
+        }
+
+        function getLiNum(i) {
+            li[i].onmouseover = function () {
+                //清除原先的active样式
+                $(this).siblings("li").removeClass("active");
+                $(this).addClass("active")
+
+            }
+
+        }
 
     });
 
