@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ static_url('css/style.css') }}/">
+    <link rel="stylesheet" href="{{ static_url('css/iconfont.css') }}/">
+    <script src="{{static_url('js/jquery.min.js')}}"></script>
+    <title></title>
+</head>
+<body>
+
+<div class="login-box" style="margin-top:50px;">
+    <div class="box-con tran">
+        <!-- 登录 start -->
+        <div class="login-con f-l">
+            <div class="form-group">
+                <input type="text" id="login_email" placeholder="邮箱"/>
+                <span class="error-notic">邮箱不正确</span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="login_pwd" placeholder="密码">
+            </div>
+            <div class="form-group">
+                <button id="login_click" class="tran">登录</button>
+                <img class="loading" src="{{ static_url('images/loading.gif') }}" style="display:none">
+            </div>
+            <div class="from-line"></div>
+            <div class="form-group">
+                <a href="javascript:;" class="move-signup a-tag tran blue-border">还没有帐号？免费注册<i class="iconfont tran">&#xe606;</i></a>
+            </div>
+            <div class="form-group">
+                <a href="javascript:;" class="move-reset a-tag tran">忘记密码？重置 <i class="iconfont tran">&#xe606;</i></a>
+            </div>
+
+        </div>
+        <!-- 登录 end -->
+
+        <!-- 注册 start -->
+        <div class="signup f-l">
+            <!-- 邮箱注册start -->
+            <div class="form-group">
+                <div class="signup-form">
+                    <input type="text" placeholder="邮箱" id="register_email" class="email-mobile"
+                           onblur="verify.verifyEmail(this)">
+
+                </div>
+                <span class="error-notic">邮箱格式不正确</span>
+            </div>
+
+            <div class="signup-email">
+                <div class="form-group">
+                    <input type="text" id="register_username" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register_pwd" placeholder="密码（字母、数字，至少6位）"
+                           onblur="verify.PasswordLenght(this)">
+                    <span class="error-notic">密码长度不够</span>
+                </div>
+                <div class="form-group">
+                    <button id="register_click" class="tran">注册</button>
+                    <img class="loading" src="{{ static_url('images/loading.gif') }}">
+                </div>
+                <p class="view-clause">点击注册，即同意我们的 <a href="/user/agreement/">用户隐私条款</a></p>
+            </div>
+            <!-- 邮箱注册end -->
+
+            <div class="from-line"></div>
+            <div class="form-group">
+                <a href="javascript:;" class="move-login a-tag tran blue-border">已有帐号？登录<i class="iconfont tran">&#xe606;</i></a>
+            </div>
+
+        </div>
+        <!-- 注册 end -->
+
+        <!-- 第三方登录 start -->
+        <div class="other-way f-l">
+            <div class="from-line"></div>
+
+
+        </div>
+        <!-- 第三方登录 end -->
+
+
+        <!-- 密码重置 start -->
+        <div class="mimachongzhi f-l">
+            <div class="form-group">
+                <input type="text" id="reset_email" placeholder="请输入您注册的邮箱地址">
+                <span class="error-notic">邮箱格式不正确</span>
+            </div>
+            <div class="form-group">
+                <button id="send_reset_email" class="tran">发送重置密码邮件</button>
+                <img class="loading" src="{{ static_url('images/loading.gif') }}">
+
+            </div>
+            <div class="from-line"></div>
+            <div class="form-group">
+                <a href="javascript:;" class="move-signup	a-tag tran blue-border">还没有帐号？免费注册<i class="iconfont tran">&#xe606;</i></a>
+            </div>
+            <div class="form-group">
+                <a href="javascript:;" class="move-login a-tag tran">已有帐号？登录<i class="iconfont tran">&#xe606;</i></a>
+            </div>
+        </div>
+        <!-- 密码重置 end -->
+
+<script>
+    $(function () {
+        //登陆，注册，忘记密码，三页面切换
+        var move_signup = $(".move-signup")
+        var move_reset = $(".move-reset")
+        var move_login = $(".move-login")
+
+        //1：注册页面跳转
+
+
+
+
+
+
+    })
+
+
+
+
+
+</script>
+
+    </div>
+</div>
