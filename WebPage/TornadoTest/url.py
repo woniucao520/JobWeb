@@ -19,7 +19,7 @@ url = [
     (r'/blog/detail',DetailHandler),
     (r'/blog/article',BlogListHandler),
 
-    (r'/blog/login',UserLoginHandler)
+    (r'/user/login',UserLoginHandler)
 
 ]
 

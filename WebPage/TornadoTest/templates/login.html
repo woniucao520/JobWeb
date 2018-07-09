@@ -40,8 +40,8 @@
             <!-- 邮箱注册start -->
             <div class="form-group">
                 <div class="signup-form">
-                    <input type="text" placeholder="邮箱" id="register_email" class="email-mobile"
-                           onblur="verify.verifyEmail(this)">
+                    <input type="text" placeholder="邮箱" id="register_email" class="email-mobile">
+
 
                 </div>
                 <span class="error-notic">邮箱格式不正确</span>
@@ -104,19 +104,121 @@
 
 <script>
     $(function () {
+
+
         //登陆，注册，忘记密码，三页面切换
-        var move_signup = $(".move-signup")
-        var move_reset = $(".move-reset")
-        var move_login = $(".move-login")
+        var move_signup = $(".move-signup");
+        var move_reset = $(".move-reset");
+        var move_login = $(".move-login");
+
+        //移动的容器
+        var move_box = $(".box-con");
 
         //1：注册页面跳转
+        move_signup.click(function () {
 
+              move_box.css({ "margin-left": "-320px"})
+        });
+        //2：忘记密码？重置
+        move_reset.click(function () {
+            move_box.css({"margin-left": "-960px"})
+        });
 
-
+        //跳转到注册页面，点击已有账号，直接登录
+        move_login.click(function () {
+              move_box.css({"margin-left": 0})
+        })
 
 
 
     })
+
+    //登录页面验证
+
+    checkLogin()
+
+    function checkLogin() {
+        var login_email = $("#login_email");
+        var login_pwd = $("#login_pwd");
+        //邮箱不能为空
+        //满足邮箱格式
+        $("#login_click").bind("click",function () {
+
+             if(login_email.val().length<1 ||login_pwd.val().length<1 ){
+
+                login_email.next().text("亲，邮箱 or 密码不能为空奥");
+                login_email.next().css({"display":"block"});
+                                           //触发焦点事件
+            $("#login_email").focus(function () {
+                console.log("焦点事件的触发")
+                  login_email.next().css({"display":"none"});
+            })
+             }
+
+             //触发ajax事件
+            $.ajax({
+                method:'post',
+                url:'/user/login',
+                data:{login_email:login_email.val(), login_pwd:login_pwd.val()},
+                dataType:'json'
+            }).done(function (data) {
+                if(data.result == 'success'){
+                    alert(data.msg)
+                }
+                else{
+                    alert(data.msg)
+                }
+            })
+            //
+
+        });
+
+
+        //用户注册
+
+        var register_click = $("#register_click");
+        var register_email = $("#register_email");
+        var register_username = $("#register_username");
+        var register_pwd = $("#register_pwd");
+
+
+        register_click.bind("click",function () {
+
+            //email
+            if(!register_email.val().match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)){
+                register_email.parent().next().css({"display":"block"});
+                   $("#register_email").focus(function () {
+
+                  $(this).parent().next().css({"display":"none"});
+            })
+                return;
+
+            }
+
+
+            //用户名:字母或者数字6-16位
+            var rname = /^[A-Za-z0-9]{6,16}$/
+            if(!rname.test(register_username.val())){
+                alert("用户名只允许使用字母或数字(6~16位)");
+                return;
+            }
+
+            //密码位数验证
+            if(register_pwd.val().length<6){
+                alert("密码不得少于6个字符");
+                return;
+            }
+
+
+
+
+        })
+
+
+
+
+
+    }
 
 
 

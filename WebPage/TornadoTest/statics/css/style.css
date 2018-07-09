@@ -116,9 +116,9 @@ li:after, div:after, ul:after{
 	box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
-	transition:all 0.3s ease-out;
-	-webkit-transition:all 0.3s ease-out;
-	-moz-transition:all 0.3s ease-out;
+	transition:all 0.5s ease-out;
+	-webkit-transition:all 0.5s ease-out;
+	-moz-transition:all 0.5s ease-out;
 }
 .login-box input:focus{
 	border-color: #03a9f4;
