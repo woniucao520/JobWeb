@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <input type="password" id="register_pwd" placeholder="密码（字母、数字，至少6位）"
-                           onblur="verify.PasswordLenght(this)">
+                          >
                     <span class="error-notic">密码长度不够</span>
                 </div>
                 <div class="form-group">
@@ -164,6 +164,7 @@
             }).done(function (data) {
                 if(data.result == 'success'){
                     alert(data.msg)
+                      window.location.href = '/index'
                 }
                 else{
                     alert(data.msg)
@@ -187,10 +188,11 @@
             //email
             if(!register_email.val().match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)){
                 register_email.parent().next().css({"display":"block"});
+
                    $("#register_email").focus(function () {
 
-                  $(this).parent().next().css({"display":"none"});
-            })
+                        $(this).parent().next().css({"display":"none"});
+                    })
                 return;
 
             }
@@ -209,6 +211,21 @@
                 return;
             }
 
+             //触发ajax事件
+            $.ajax({
+                method:'post',
+                url:'/user/registered',
+                data:{register_email:register_email.val(), register_username:register_username.val(),register_pwd:register_pwd.val()},
+                dataType:'json'
+            }).done(function (data) {
+                if(data.result == 'success'){
+                    alert(data.msg)
+                     window.location.href = '/user/login'
+                }
+                else{
+                    alert(data.msg)
+                }
+            })
 
 
 

@@ -19,7 +19,8 @@ url = [
     (r'/blog/detail',DetailHandler),
     (r'/blog/article',BlogListHandler),
 
-    (r'/user/login',UserLoginHandler)
+    (r'/user/login',UserLoginHandler),
+    (r'/user/registered',UserRegisteredHandler)
 
 ]
 
