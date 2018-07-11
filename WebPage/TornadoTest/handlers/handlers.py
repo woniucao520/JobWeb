@@ -49,9 +49,9 @@ class BlogListHandler(tornado.web.RequestHandler):
         description = db._get_description(query_blogs_sql)
         # 如果description 不为空 for循环 遍历 取索引为0的值(也就是字段名) 为空 则调用 _get_fields_meta 方法 取出该表的元数据 字段
         ths = [i[0] for i in description] if description else db._get_fields_meta(schema='blog', table_name='blog')
-        print(ths)
+
         # 将数据集转换为list
         blogs = db._get_list_item(ths=ths, datas=datas)
-        print(blogs)
+
         self.render('blog_list.html',title=title,blogs=blogs,ths=ths)
 

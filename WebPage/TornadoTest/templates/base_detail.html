@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>蜗牛曹个人博客--详情页</title>
+{% include 'header.html' %}
 
      <!--css-->
-    <link rel="stylesheet" href="{{ static_url('css/bootstrap.min.css') }}">
+
     <link rel="stylesheet" href="{{ static_url('css/pace.css') }}">
     <link rel="stylesheet" href="{{ static_url('css/custom.css') }}">
-    <link rel="stylesheet"  href="{{static_url('css/base.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{static_url('css/index.css')}}" type="text/css">
+
     <link rel="stylesheet"  href="{{static_url('css/bloglists.css')}}" type="text/css">
+
     <link rel="stylesheet"  href="{{static_url('css/basic.css')}}" type="text/css">
     <link rel="stylesheet"  href="{{static_url('css/articledetail.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ static_url('css/pace.css') }}">
-    <link rel="stylesheet" href="{{ static_url('css/custom.css') }}">
-
     <link rel="stylesheet" href="{{ static_url('css/markdown/github.css')}}" type="text/css">
 
-
-
-    <!--js-->
-    <script src="{{static_url('js/jquery.min.js')}}"></script>
-       <script src="{{ static_url('js/bootstrap.min.js')}}"></script>
-    <script src="{{static_url('js/script.js')}}"></script>
 </head>
+
+
 <body>
 
 <!--文章导航部分-->
@@ -41,8 +31,8 @@
                 </a>
             </div>
             <!--导航栏-->
-            <div class="topnav fr">
-                <ul class="clear-float">
+          <div class="topnav fr">
+                <ul id="topnav" class="clear-float">
                     <li >
                         <a href="/index">
                             首页
@@ -104,40 +94,46 @@
                 <!--关注我：二维码展示-->
                 <div class="mecode">
                     <h3>关注与联系</h3>
-                    <img src="{{static_url('images/payme.png')}}">
+                    <img src="{{static_url('images/payme.jpg')}}">
 
                 </div>
                 <!--点击排行-->
-                <div class="click_list">
-                    <ul class="click_title clear-float">
-                        <li class="cur"><a href="#">点击排行</a></li>
-                        <li ><a href="#">最新文章</a></li>
-                        <li ><a href="#">博主推荐</a></li>
-                    </ul>
-                    <div class="click_main">
-                        <div class="item_text show">
-                            <ul >
-                                <li><a href="#">点击排行</a></li>
-                                <li><a href="#">教你如何用欠费手机打电话</a></li>
-                                <li><a href="#">你面对的是生活不是手机</a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <ul>
-                                <li><a href="#">最新文章</a></li>
-                                <li><a href="#">教你如何用欠费手机打电话</a></li>
-                                <li><a href="#">你面对的是生活不是手机</a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <ul>
-                                <li><a href="#">站长推荐</a></li>
-                                <li><a href="#">教你如何用欠费手机打电话</a></li>
-                                <li><a href="#">你面对的是生活不是手机</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+   <!--<div class="click_list">-->
+        <!--<ul class="click_title clear-float">-->
+            <!--<li class="cur"><a href="#">点击排行</a></li>-->
+            <!--<li ><a href="#">最新文章</a></li>-->
+            <!--<li ><a href="#">博主推荐</a></li>-->
+        <!--</ul>-->
+
+        <!--<div class="click_main">-->
+
+            <!--<div class="item_text show">-->
+                <!--<ul >-->
+                    <!--{%  for click in click_sorted %}-->
+                    <!--<li><a href="/blog/detail?blog_id={{click['id']}}">{{click['title']}}</a></li>-->
+                   <!--{% end %}-->
+                <!--</ul>-->
+            <!--</div>-->
+
+            <!--<div class="item_text">-->
+                <!--<ul>-->
+                    <!--{% for latest in latest_sorted %}-->
+                    <!--<li><a href="/blog/detail?blog_id={{latest['id']}}">{{latest['title']}}</a></li>-->
+                    <!--{% end %}-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="item_text">-->
+                <!--<ul>-->
+                    <!--{% for author in author_sorted %}-->
+                    <!--<li><a href="/blog/detail?blog_id={{author['id']}}">{{author['title']}}</a></li>-->
+                    <!--{% end %}-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+<!--</div>-->
+                     {% include 'right_side.html' %}
+
                 <!--友情链接-->
                 <div class="friend_link">
                     <h3>友情链接</h3>
@@ -162,7 +158,47 @@
 <div class="clearfix">
 </div>
 
+<script>
+    //获取元素
+    var navli = $("#topnav li");
+    var titleli = $(".click_title li");
+    var click_main = $(".click_main").children()
 
+    //防止闭包
+    for(var i =0; i< navli.length ; i++){
+
+        navTop(i);
+    }
+
+    for (var j =0; j< titleli.length; j++){
+        changeTitle(j);
+    }
+
+
+    //导航栏设计
+    function navTop(i) {
+        navli[i].onclick = function () {
+            //清除其他元素
+              $(this).siblings("li").removeClass("active");
+                $(this).addClass("active")
+            //自己active状态
+        }
+    }
+
+    //点击排行榜设计
+
+    function changeTitle(j) {
+        titleli[j].onmousemove = function () {
+            $(this).siblings("li").removeClass("cur")
+             $(this).addClass("cur")
+                for(var k =0 ; k < click_main.length ; k ++){
+                    click_main[k].className ="item_text "
+                }
+            click_main[j].className = "item_text show"
+        }
+    }
+
+</script>
 
 
 </div>

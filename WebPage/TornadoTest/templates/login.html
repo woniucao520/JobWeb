@@ -152,6 +152,13 @@
             $("#login_email").focus(function () {
                 console.log("焦点事件的触发")
                   login_email.next().css({"display":"none"});
+            });
+
+
+                             $("#login_pwd").focus(function () {
+                                 login_pwd.parent().prev().find("span").css({"display":"none"});
+
+
             })
              }
 

@@ -9,7 +9,7 @@ class User(Base):
     __tablename__ = "testusers"
     id = Column(Integer,primary_key=True, autoincrement=True)
     user_name = Column(String(20),nullable=False)
-    password = Column(String(50))
+    password = Column(String(254))
     email = Column(String(50))
     create_time = Column(DateTime)
     is_active = Column(Integer)

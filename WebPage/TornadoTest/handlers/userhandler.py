@@ -17,21 +17,25 @@ from methods.user_modules import User
 
 class UserLoginHandler(tornado.web.RequestHandler):
 
+    def md5(self,param):
+        m = hashlib.md5()
+        m.update(param.encode('utf8'))
+        return m.hexdigest()
+
 
     def get(self):
+
         self.render("login.html")
 
     def post(self):
         login_email = self.get_argument("login_email")
         login_pwd = self.get_argument("login_pwd")
         db = BlogDbApi()
+        login_pwd = self.md5(login_pwd)
         # login_pwd = self.md5(login_pwd)
         # 判断注册邮箱是否存在
         checked_email = 'select * from testusers where email = "{}"'.format(login_email)
         email_info = db._get_data(checked_email)
-        # if email_info :
-
-
         if email_info:
             # 判断密码是否正确
             check_pwd = 'select password from testusers where email = "{}"'.format(login_email)
@@ -57,10 +61,11 @@ class UserLoginHandler(tornado.web.RequestHandler):
 # 注册
 class UserRegisteredHandler(tornado.web.RequestHandler):
 
-    # @property
-    # def session(self):
-    #     return self.application.session
 
+    def md5(self,param):
+        m = hashlib.md5()
+        m.update(param.encode('utf8'))
+        return m.hexdigest()
 
     def get(self):
         self.render("login.html")
@@ -68,6 +73,7 @@ class UserRegisteredHandler(tornado.web.RequestHandler):
     def post(self):
         register_username = self.get_argument("register_username")
         register_pwd = self.get_argument("register_pwd")
+        register_pwd = self.md5(register_pwd)
         register_email = self.get_argument("register_email")
         check_username_sql = 'select * from users where user_name ="{}"'.format(register_username)
         check_email_sql = 'select * from users where email = "{}"'.format(register_email)
@@ -103,7 +109,7 @@ class UserRegisteredHandler(tornado.web.RequestHandler):
 
         data = {'result': 'success', 'msg': "恭喜，注册成功"}
         self.write(json.dumps(data))
-        self.finish()
+
 
 
         session.close()

@@ -22,7 +22,7 @@ body{
 .topnav{
     background: #5696ff;
     width: 55%;
-    height: 50px;
+    height: 52px;
     border-radius: 45px;
     /*border: 1px solid #333333;*/
 
@@ -49,9 +49,12 @@ li.active{
 }
 
 /*导航鼠标经过效果*/
-li:hover{
-    background-color: white;
-}
+/*#nav>li:hover{*/
+    /*background-color: lightskyblue;*/
+/*}*/
+/*#nav>li>a:hover{*/
+    /*color: white;*/
+/*}*/
 
 
 /*第二部分：轮播图样式*/
@@ -319,15 +322,15 @@ ul.click_title>li.cur a{
 }
 /*鼠标经过效果*/
 .item_text>ul>li:hover{
-    border-bottom: 1px solid #666666;
+    border-bottom: 1px solid #F60;
 }
 .item_text>ul>li:hover a{
-    color: #333333;
+    color: #F60;
 }
 .item_text{
     display: none;
 }
-.show{
+.click_main>.show{
     display: block;
 }
 

@@ -1,0 +1,33 @@
+   <div class="click_list">
+        <ul class="click_title clear-float">
+            <li class="cur"><a href="#">点击排行</a></li>
+            <li ><a href="#">最新文章</a></li>
+            <li ><a href="#">博主推荐</a></li>
+        </ul>
+
+        <div class="click_main">
+
+            <div class="item_text show">
+                <ul >
+                    {%  for click in click_sorted %}
+                    <li><a href="/blog/detail?blog_id={{click['id']}}">{{click['title']}}</a></li>
+                   {% end %}
+                </ul>
+            </div>
+
+            <div class="item_text">
+                <ul>
+                    {% for latest in latest_sorted %}
+                    <li><a href="/blog/detail?blog_id={{latest['id']}}">{{latest['title']}}</a></li>
+                    {% end %}
+                </ul>
+            </div>
+            <div class="item_text">
+                <ul>
+                    {% for author in author_sorted %}
+                    <li><a href="/blog/detail?blog_id={{author['id']}}">{{author['title']}}</a></li>
+                    {% end %}
+                </ul>
+            </div>
+        </div>
+</div>

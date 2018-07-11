@@ -1,5 +1,8 @@
 
-
+a:hover {
+ color: #f60;
+ text-decoration: none;
+}
 /*当前所在位置*/
 .destination>h2{
     background: url("../images/lct.png") left center no-repeat;
@@ -50,9 +53,15 @@
 
 }
 
-.news_content>p,h4,h6{
+.news_content>p,h4{
     line-height: 28px;
     font-size: 14px;
+}
+
+.news_content>h6,h5,h2,h1,h3{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 30px;
 }
 
 .news_content>p>img{

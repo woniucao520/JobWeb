@@ -11,6 +11,7 @@
 
     <!--js-->
     <script src="{{static_url('js/jquery.min.js')}}"></script>
+
     <script src="{{static_url('js/script.js')}}"></script>
 
 </head>
@@ -28,7 +29,7 @@
         </div>
         <!--导航栏-->
         <div class="topnav fr">
-            <ul id="nav" class="nav clear-float">
+            <ul id="topnav" class="clear-float">
                 <li class="active">
                     <a href="/index">
                         首页
@@ -135,7 +136,7 @@
 
 
                   <content>
-                    {% block body%}{% end %}
+                    {% block body %}{% end %}
                 </content>
 
 
@@ -148,36 +149,7 @@
             </div>
             <div class="article_right fr">
                 <!--点击排行-->
-                <div class="click_list">
-                    <ul class="click_title clear-float">
-                        <li class="cur"><a href="#">点击排行</a></li>
-                        <li ><a href="#">最新文章</a></li>
-                        <li ><a href="#">博主推荐</a></li>
-                    </ul>
-                    <div class="click_main">
-                        <div class="item_text show">
-                            <ul >
-                                <li><a href="#">点击排行</a></li>
-                                <li><a href="#">教你如何用欠费手机打电话</a></li>
-                                <li><a href="#">你面对的是生活不是手机</a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <ul>
-                                <li><a href="#">最新文章</a></li>
-                                <li><a href="#">教你如何用欠费手机打电话</a></li>
-                                <li><a href="#">你面对的是生活不是手机</a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <ul>
-                                <li><a href="#">站长推荐</a></li>
-                                <li><a href="#">教你如何用欠费手机打电话</a></li>
-                                <li><a href="#">你面对的是生活不是手机</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                      {% include 'right_side.html' %}
                 <!--标签云-->
                 <div class="tag_cloud">
                     <h3>标签云</h3>
@@ -246,13 +218,13 @@
         });
 
 
-        var li = document.getElementById("nav").getElementsByTagName("li")
+        var li = document.getElementById("nav").getElementsByTagName("li");
         for(var i=0; i<li.length; i++){
             getLiNum(i);
         }
 
         function getLiNum(i) {
-            li[i].onmouseover = function () {
+            li[i].onclick = function () {
                 //清除原先的active样式
                 $(this).siblings("li").removeClass("active");
                 $(this).addClass("active")
@@ -262,6 +234,47 @@
         }
 
     });
+
+
+
+        //获取元素
+    var navli = $("#topnav li");
+    var titleli = $(".click_title li");
+    var click_main = $(".click_main").children()
+
+    //防止闭包
+    for(var i =0; i< navli.length ; i++){
+
+        navTop(i);
+    }
+
+    for (var j =0; j< titleli.length; j++){
+        changeTitle(j);
+    }
+
+
+    //导航栏设计
+    function navTop(i) {
+        navli[i].onclick = function () {
+            //清除其他元素
+              $(this).siblings("li").removeClass("active");
+                $(this).addClass("active")
+            //自己active状态
+        }
+    }
+
+    //点击排行榜设计
+
+    function changeTitle(j) {
+        titleli[j].onmousemove = function () {
+            $(this).siblings("li").removeClass("cur")
+             $(this).addClass("cur")
+                for(var k =0 ; k < click_main.length ; k ++){
+                    click_main[k].className ="item_text "
+                }
+            click_main[j].className = "item_text show"
+        }
+    }
 
 
     </script>
