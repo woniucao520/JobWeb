@@ -1,0 +1,72 @@
+#wrap{
+    height: 100%;
+    background: #eee;
+}
+
+#headerTop{
+    height: 135px;
+    background: black;
+}
+
+#logo{
+
+    width: 240px;
+    height: 88px;
+    padding:  26px 17px 21px 17px;
+
+}
+
+
+
+#menBtn{
+    display: inline-block;
+    width:129px ;
+    height:135px ;
+    background: url("../img/menuBtn.png") no-repeat;
+    background-size: 82px 233px;
+    }
+.menuBtn_clos{
+    background-position: center 16px;
+}
+
+.menuBtn_open{
+    background-position: center -120px !important;
+}
+
+#nav{
+    padding-top:21px ;
+}
+
+#nav a{
+    display: inline-block;
+    width: 111px;
+    height: 78px;
+    background-color: #690;
+    line-height: 78px;
+    text-align: center;
+    color: #ccc;
+    font-size: 42px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+/*搜索框*/
+#search{
+    height: 103px;
+    padding: 16px;
+}
+
+/*输入框*/
+#search input[type='text']{
+    box-sizing: border-box;
+    width: 829px;
+    height: 103px;
+    background-color: #999;
+    padding: 5px 10px;
+    border: 1px solid #5a5a5a;
+    font-size: 14px;
+    color: #333;
+    border-radius: 15px;
+
+}
+
