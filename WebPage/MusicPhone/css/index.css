@@ -1,5 +1,13 @@
+
+/* 用于解决移动端overflow:hiddern 失效的bug*/
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
 #wrap{
     height: 100%;
+    width: 100%;
     background: #eee;
 }
 
@@ -7,6 +15,16 @@
     height: 135px;
     background: black;
 }
+
+/*header设置相对定位：为了方便mask的折叠与显示*/
+header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
 
 #logo{
 
@@ -25,8 +43,9 @@
     background: url("../img/menuBtn.png") no-repeat;
     background-size: 82px 233px;
     }
+
 .menuBtn_clos{
-    background-position: center 16px;
+    background-position: center 16px !important;
 }
 
 .menuBtn_open{
@@ -50,6 +69,18 @@
     margin-right: 15px;
 }
 
+/*单个搜索按钮*/
+#nav>#searchBtn{
+    width: 130px;
+    height: 88px;
+    line-height: 88px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 3px 30px 0 0;
+    border-radius: 10px;
+}
+
+
 /*搜索框*/
 #search{
     height: 103px;
@@ -58,15 +89,214 @@
 
 /*输入框*/
 #search input[type='text']{
+
     box-sizing: border-box;
     width: 829px;
     height: 103px;
     background-color: #999;
     padding: 5px 10px;
     border: 1px solid #5a5a5a;
-    font-size: 14px;
+    font-size: 41px;
     color: #333;
     border-radius: 15px;
 
 }
 
+/*焦点触发,背景变色*/
+#search input[type='text']:focus{
+    background-color: white;
+}
+
+/*输入框内的提示文字*/
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+ /* WebKit browsers */
+color: #333;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+/* Mozilla Firefox 4 to 18 */
+color: #333;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+ /* Mozilla Firefox 19+ */
+color: #333;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+ /* Internet Explorer 10+ */
+color: #333;
+}
+
+/*搜索按钮*/
+#search input[type="submit"]{
+    float:right;
+    width: 203px;
+    height: 103px;
+    background: #414040;
+    color: #fff;
+    font-size: 41px;
+    border-radius: 15px;
+}
+
+/*折叠导航部分*/
+/*绝对定位,top值*/
+#mask{
+    width: 100%;
+    position: absolute;
+    top:135px;
+    padding: 10px 0;
+    border-top: 1px solid #6a6a6a;
+    background: rgba(0,0,0,.8);
+}
+
+/*菜单li标签*/
+#mask li{
+    float:left;
+    width: 22.5%;
+    height: 135px;
+    line-height: 135px;
+    font-size: 54px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#mask li a{
+    color: #ffffff;
+}
+
+#content{
+    padding-top: 270px;
+}
+
+/*主页导航栏*/
+#navs{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 177px;
+    padding: 31px 0 14px 0;
+}
+
+
+#navsList{
+    float: left;
+    white-space: nowrap;
+}
+
+#navsList li{
+    display: inline-block;
+    height: 129px;
+    line-height: 129px;
+    padding:0 38px;
+    font-size: 20px;
+
+}
+
+#navsList li a{
+    color: #020202;
+}
+
+/*导航被点击时候的状态*/
+
+#navsList li.active{
+    background: #669900;
+}
+
+#navsList li.active a{
+    color: #ffffff;
+}
+
+/*轮播图样式*/
+.banner_wrap{
+    position: relative;
+}
+
+.banner_list{
+    width: 500%;
+}
+
+.banner_list li{
+    float: left;
+    width: 20%;
+
+}
+
+.banner_list li img{
+    width: 100%;
+}
+
+/*下部分：小圆点*/
+
+#banner_navs{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 10px;
+    line-height: 10px;
+
+    text-align: center;
+}
+
+#banner_navs span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+/*圆点被选中*/
+#banner_navs .active{
+    background: red;
+}
+
+
+/*主内容部分*/
+.tab{
+
+    width: 100%;
+    background-color: white;
+     padding: 0 20px;
+    margin: 0 auto;
+
+}
+
+.tab_header {
+  height: 40px;
+  line-height: 40px;
+
+
+
+}
+.tab_header h2 {
+  font-size: 24px;
+}
+.tab_header a{
+    font-size: 12px;
+    color: #333333;
+}
+
+/*地区音乐分类导航*/
+.tab_nav{
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+}
+.tab_nav a{
+
+    float: left;
+    width: 40px;
+    height: 35px;
+    font-size: 20px;
+    margin-right: 25px;
+}
+
+/*绿色滚动条*/
+.tab_nav span{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #669900;
+
+}
