@@ -1,302 +1,255 @@
-
-/* 用于解决移动端overflow:hiddern 失效的bug*/
+* {
+  margin: 0;
+  padding: 0;
+}
 html,
 body {
   height: 100%;
   overflow: hidden;
 }
-#wrap{
-    height: 100%;
-    width: 100%;
-    background: #eee;
+html {
+  font-size: 48px !important;
 }
-
-#headerTop{
-    height: 135px;
-    background: black;
+#wrap {
+  height: 100%;
+  background: #eee;
 }
-
-/*header设置相对定位：为了方便mask的折叠与显示*/
-header{
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 100;
+#headerTop {
+  height: 2rem;
+  background: black;
 }
-
-
-#logo{
-
-    width: 240px;
-    height: 88px;
-    padding:  26px 17px 21px 17px;
-
+/*header������Զ�λ��Ϊ�˷���mask���۵�����ʾ*/
+header {
+  position: absolute;
+  background: black;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
 }
-
-
-
-#menBtn{
-    display: inline-block;
-    width:129px ;
-    height:135px ;
-    background: url("../img/menuBtn.png") no-repeat;
-    background-size: 82px 233px;
-    }
-
-.menuBtn_clos{
-    background-position: center 16px !important;
+#logo {
+  width: 3.55555556rem;
+  height: 1.3037037rem;
+  padding: 0.38518519rem 0.25185185rem 0.31111111rem 0.25185185rem;
 }
-
-.menuBtn_open{
-    background-position: center -120px !important;
+#logo img {
+  width: 100%;
 }
-
-#nav{
-    padding-top:21px ;
+#menBtn {
+  display: inline-block;
+  width: 1.91111111rem;
+  height: 2rem;
+  background: url("../img/menuBtn.png") no-repeat;
+  background-size: 1.21481481rem 3.45185185rem;
 }
-
-#nav a{
-    display: inline-block;
-    width: 111px;
-    height: 78px;
-    background-color: #690;
-    line-height: 78px;
-    text-align: center;
-    color: #ccc;
-    font-size: 42px;
-    border-radius: 8px;
-    margin-right: 15px;
+.menuBtn_clos {
+  background-position: center 0.23703704rem !important;
 }
-
-/*单个搜索按钮*/
-#nav>#searchBtn{
-    width: 130px;
-    height: 88px;
-    line-height: 88px;
-    font-weight: bold;
-    color: #ffffff;
-    margin: 3px 30px 0 0;
-    border-radius: 10px;
+.menuBtn_open {
+  background-position: center -1.77777778rem !important;
 }
-
-
-/*搜索框*/
-#search{
-    height: 103px;
-    padding: 16px;
+#nav {
+  padding-top: 0.31111111rem;
 }
-
-/*输入框*/
-#search input[type='text']{
-
-    box-sizing: border-box;
-    width: 829px;
-    height: 103px;
-    background-color: #999;
-    padding: 5px 10px;
-    border: 1px solid #5a5a5a;
-    font-size: 41px;
-    color: #333;
-    border-radius: 15px;
-
+#nav a {
+  display: inline-block;
+  width: 1.92592593rem;
+  height: 1.3037037rem;
+  background-color: #690;
+  line-height: 1.3037037rem;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.62222222rem;
+  border-radius: 0.11851852rem;
+  margin-right: 0.22222222rem;
 }
-
-/*焦点触发,背景变色*/
-#search input[type='text']:focus{
-    background-color: white;
+/*����������ť*/
+#nav > #searchBtn {
+  width: 1.92592593rem;
+  height: 1.3037037rem;
+  line-height: 1.3037037rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0.04444444rem 0.44444444rem 0 0;
+  border-radius: 0.14814815rem;
 }
-
-/*输入框内的提示文字*/
-
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
- /* WebKit browsers */
-color: #333;
+#search {
+  height: 1.52592593rem;
+  padding: 0.23703704rem;
 }
-input:-moz-placeholder, textarea:-moz-placeholder {
-/* Mozilla Firefox 4 to 18 */
-color: #333;
+#search input[type='text'] {
+  box-sizing: border-box;
+  width: 65%;
+  height: 1.52592593rem;
+  background-color: #999;
+  padding: 0.07407407rem 0.14814815rem;
+  border: 0.01481481rem solid #5a5a5a;
+  font-size: 0.60740741rem;
+  color: #333;
+  border-radius: 0.22222222rem;
 }
-input::-moz-placeholder, textarea::-moz-placeholder {
- /* Mozilla Firefox 19+ */
-color: #333;
+#search input[type='text']:focus {
+  background-color: white;
 }
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
- /* Internet Explorer 10+ */
-color: #333;
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #333;
 }
-
-/*搜索按钮*/
-#search input[type="submit"]{
-    float:right;
-    width: 203px;
-    height: 103px;
-    background: #414040;
-    color: #fff;
-    font-size: 41px;
-    border-radius: 15px;
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #333;
 }
-
-/*折叠导航部分*/
-/*绝对定位,top值*/
-#mask{
-    width: 100%;
-    position: absolute;
-    top:135px;
-    padding: 10px 0;
-    border-top: 1px solid #6a6a6a;
-    background: rgba(0,0,0,.8);
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #333;
 }
-
-/*菜单li标签*/
-#mask li{
-    float:left;
-    width: 22.5%;
-    height: 135px;
-    line-height: 135px;
-    font-size: 54px;
-    text-align: center;
-    font-weight: bold;
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #333;
 }
-
-#mask li a{
-    color: #ffffff;
+/*������ť*/
+#search input[type="submit"] {
+  float: right;
+  width: 3.00740741rem;
+  height: 1.52592593rem;
+  background: #414040;
+  color: #fff;
+  font-size: 0.60740741rem;
+  border-radius: 0.22222222rem;
 }
-
-#content{
-    padding-top: 270px;
+/*�۵���������*/
+/*���Զ�λ,topֵ*/
+#mask {
+  z-index: 100;
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+  padding: 0.14814815rem 0;
+  border-top: 0.01481481rem solid #6a6a6a;
+  background: rgba(0, 0, 0, 0.8);
 }
-
-/*主页导航栏*/
-#navs{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 177px;
-    padding: 31px 0 14px 0;
+/*�˵�li��ǩ*/
+#mask li {
+  float: left;
+  width: 22.5%;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
 }
-
-
-#navsList{
-    float: left;
-    white-space: nowrap;
+#mask li a {
+  color: #ffffff;
 }
-
-#navsList li{
-    display: inline-block;
-    height: 129px;
-    line-height: 129px;
-    padding:0 38px;
-    font-size: 20px;
-
+#content {
+  padding-top: 4rem;
 }
-
-#navsList li a{
-    color: #020202;
+/*��ҳ������*/
+#navs {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 2.62222222rem;
+  padding: 0.45925926rem 0 0.20740741rem 0;
 }
-
-/*导航被点击时候的状态*/
-
-#navsList li.active{
-    background: #669900;
+#navsList {
+  float: left;
+  white-space: nowrap;
 }
-
-#navsList li.active a{
-    color: #ffffff;
+#navsList li {
+  display: inline-block;
+  height: 1.91111111rem;
+  line-height: 1.91111111rem;
+  padding: 0 0.56296296rem;
+  font-size: 1rem;
 }
-
-/*轮播图样式*/
-.banner_wrap{
-    position: relative;
+#navsList li a {
+  color: #020202;
 }
-
-.banner_list{
-    width: 500%;
+/*���������ʱ���״̬*/
+#navsList li.active {
+  background: #669900;
 }
-
-.banner_list li{
-    float: left;
-    width: 20%;
-
+#navsList li.active a {
+  color: #ffffff;
 }
-
-.banner_list li img{
-    width: 100%;
+/*�ֲ�ͼ��ʽ*/
+.banner_wrap {
+  position: relative;
+  height: 368px;
 }
-
-/*下部分：小圆点*/
-
-#banner_navs{
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    height: 10px;
-    line-height: 10px;
-
-    text-align: center;
+.banner_list {
+  width: 500%;
+  position: absolute;
 }
-
-#banner_navs span{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: gray;
-    border-radius: 50%;
+.banner_list li {
+  float: left;
+  width: 20%;
 }
-
-/*圆点被选中*/
-#banner_navs .active{
-    background: red;
+.banner_list li img {
+  width: 100%;
 }
-
-
-/*主内容部分*/
-.tab{
-
-    width: 100%;
-    background-color: white;
-     padding: 0 20px;
-    margin: 0 auto;
-
+/*�²��֣�СԲ��*/
+#banner_navs {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  height: 10px;
+  line-height: 10px;
+  text-align: center;
 }
-
+#banner_navs span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+}
+/*Բ�㱻ѡ��*/
+#banner_navs .active {
+  background: red;
+}
+/*�����ݲ���*/
+.tab {
+  width: 15.4962963rem;
+  background-color: white;
+  padding: 0 0.2962963rem;
+  margin: 0 auto;
+}
 .tab_header {
-  height: 40px;
-  line-height: 40px;
-
-
-
+  height: 2rem;
+  line-height: 2rem;
 }
 .tab_header h2 {
   font-size: 24px;
 }
-.tab_header a{
-    font-size: 12px;
-    color: #333333;
+.tab_header a {
+  font-size: 12px;
+  color: #333333;
 }
-
-/*地区音乐分类导航*/
-.tab_nav{
-    position: relative;
-    height: 35px;
-    line-height: 35px;
+/*�������ַ��ർ��*/
+.tab_nav {
+  position: relative;
+  height: 1.55555556rem;
+  line-height: 1.55555556rem;
 }
-.tab_nav a{
-
-    float: left;
-    width: 40px;
-    height: 35px;
-    font-size: 20px;
-    margin-right: 25px;
+.tab_nav a {
+  float: left;
+  width: 1.77777778rem;
+  height: 1.55555556rem;
+  font-size: 0.65185185rem;
 }
-
-/*绿色滚动条*/
-.tab_nav span{
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background: #669900;
-
+/*��ɫ������*/
+.tab_nav span {
+  position: absolute;
+  bottom: 0rem;
+  left: 0;
+  width: 1.77777778rem;
+  height: 3 / px;
+  background: #669900;
 }

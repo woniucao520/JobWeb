@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <title>音乐台——首页</title>
     <!--css-->
+        <!--<link href="https://cdn.bootcss.com/Swiper/4.0.6/css/swiper.min.css" rel="stylesheet">-->
+
     <link rel="stylesheet" href="css/base.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--<link href="css/datouwang.css" rel="stylesheet" type="text/css">-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.0.6/js/swiper.min.js"></script>
 </head>
 <body>
 
@@ -80,50 +92,53 @@
     </header>
 
     <!--主内容区-->
-    <div id="content">
-        <div id="navs">
-         <ul id="navsList">
-            <li>
-                <a href="javascript:;">首页</a>
-            </li>
-            <li>
-                <a href="javascript:;">MV</a>
-            </li>
-            <li>
-                <a href="javascript:;">悦单</a>
-            </li>
-            <li>
-                <a href="javascript:;">V榜</a>
-            </li>
-            <li>
-                <a href="javascript:;">音悦</a>
-            </li>
-            <li class="active">
-                <a href="javascript:;">商城</a>
-            </li>
-            <li>
-                <a href="javascript:;">节目</a>
-            </li>
-            <li>
-                <a href="javascript:;">饭团</a>
-            </li>
-            <li>
-                <a href="javascript:;">资讯</a>
-            </li>
-            <li>
-                <a href="javascript:;">我的家</a>
-            </li>
-            <li class="active">
-                <a href="javascript:;">APP下载</a>
-            </li>
-            <li>
-                <a href="javascript:;">热门应用</a>
-            </li>
-        </ul>
+    <div id="content" >
+        <div class="wrapper" id="retr">
+            <div class="scroller" id="navs">
+                <ul class="clearfix"  id="navsList">
+        
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">首页</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">MV</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">悦单</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">V榜</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">音悦</a>
+                    </li>
+                    <li class="swiper-slide active">
+                        <a href="javascript:;">商城</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">节目</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">饭团</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">资讯</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">我的家</a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="javascript:;">APP下载</a>
+                    </li>
+                    <li  class="swiper-slide">
+                        <a href="javascript:;">热门应用</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!--轮播图-->
-        <div class="banner_wrap">
-            <ul class="banner_list clear-float">
+        <div class="banner_wrap " id="banner_wrap">
+            <ul class="banner_list clear-float" id="banner_list">
                 <li>
                     <a href="#"><img src="img/1.jpg"></a>
                 </li>
@@ -253,13 +268,27 @@
 
 
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/flexible.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/navbarscroll.js"></script>
+<script  type="text/javascript">
 
-<script>
+
+$(function(){
+
+	//demo示例一到四 通过lass调取，一句可以搞定，用于页面中可能有多个导航的情况
+	$('.wrapper').navbarscroll();
+
+});
+
 
 
     window.onload = function () {
         changeInput();
         changeMenu();
+        changebanner();
+        putStyle();
 
     }
     //频道 按钮点击：内容显示和隐藏
@@ -305,6 +334,10 @@
     }
 
 
+
+
+
+
     //焦点捕获事件的触发与消失
 function changeInput() {
        var  inputNode = document.querySelector("#search [type='text']")
@@ -318,6 +351,116 @@ function changeInput() {
        });
 
    }
+
+
+
+
+    //js 自动添加ul li下元素的宽高
+    function  putStyle() {
+        //获取外部容器
+        var banner_wrap = document.getElementById("banner_wrap");
+        //获取ul
+        var banner_list = document.getElementById("banner_list");
+        //获取所有banner下的li标签
+        var liNode = document.querySelectorAll(".banner_list li");
+        //创建style节点
+        var styleN = document.createElement("style");
+        //计算并获取ul的宽度
+        var ulwidth = liNode.length + "00%";
+        var liwidth = (1/liNode.length*100)+ "%";
+        console.log("ul的宽度为:"+ulwidth);
+        console.log("li的宽度为"+liwidth);
+        var Csstext = '.banner_list{width:'+ulwidth+'}'
+            Csstext += '.banner_list li{width:'+ liwidth+'}'
+            Csstext += '.banner_wrap{height:'+liNode[0].offsetHeight+ 'px}'
+            styleN.innerHTML = Csstext;
+            document.head.appendChild(styleN)
+
+
+
+
+    }
+
+   //左右图片的滑动
+    
+    function changebanner() {
+
+        var  banner_wrap = document.getElementById("banner_wrap");
+
+        var banner_list = document.getElementById("banner_list");
+          var liNode = document.querySelectorAll(".banner_list li");
+
+        var startX = 0; //初始化 手指坐标
+        var eleX = 0; //初始化元素初始位置
+
+        //手指按下
+        banner_wrap.addEventListener("touchstart",function (event) {
+
+            var touch = event.changedTouches[0];
+
+            eleX = banner_list.offsetLeft,//元素所在位置
+            startX = touch.clientX;//手指点击的距离
+            console.log("手指触发坐标:"+startX);
+            console.log("list元素:"+ eleX);
+
+            //元素此时移动的距离
+
+        })
+
+        //手指滑动
+        banner_wrap.addEventListener("touchmove",function (event) {
+            var touch = event.changedTouches[0];
+            var nowX = touch.clientX; //元素现在点击位置
+
+            //元素滑动的距离= 初始元素位置+ 手指移动的距离
+            banner_list.style.left = eleX + (nowX - startX) + "px"
+
+
+        })
+
+        //手指离开
+        banner_wrap.addEventListener("touchend",function (event) {
+            event.preventDefault()
+            var now = 0 //li元素的下表
+            var  left = banner_list.offsetLeft //ul元素移动的距离
+              console.log("left"+left)
+            var screenwidth = document.documentElement.clientWidth
+            var half = screenwidth * 0.5
+            var last = -(screenwidth*(liNode.length-1))
+
+            //计算now，就是滑出去的总的距离 / 屏幕宽度 = now的个数
+            now = Math.round(left/document.documentElement.clientWidth)
+            //判断边界,第一张，
+            if(left > half){
+                // left = 0
+                now = 0
+            }
+            //最后一张
+            if(left < last){
+                now = -(liNode.length-1)
+            }
+
+             banner_list.style.left = now * document.documentElement.clientWidth + "px"
+
+            banner_list.style.transition = '0.5s'
+            //获取所有的小圆点
+            var  spanNode = document.querySelectorAll("#banner_navs span")
+            for(var i = 0; i<spanNode.length; i++){
+                spanNode[i].className= ''
+            }
+            if(now>0){
+                now = now
+            }else {
+                now = -now
+            }
+
+            spanNode[now].className="active"
+
+
+        })
+        
+    }
+
 
 
 
